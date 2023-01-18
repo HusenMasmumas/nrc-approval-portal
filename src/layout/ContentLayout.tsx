@@ -6,7 +6,7 @@ type Props = {
 
 const ContentLayout: FC<Props> = () => {
   return (
-    <div className=" mt-10">
+    <div>
       <Outlet />
     </div>
   );

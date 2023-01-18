@@ -1,19 +1,30 @@
-import { Card, Col, Row } from "antd";
-
-import React from "react";
+import { Card } from "antd";
+import CardDashboard from "./Card";
+import PopularRadio from "./PopularRadio";
+import Table from "./Table";
+import UpdateRequest from "./UpdateRequest";
 
 const Dashboard = () => {
   return (
     <div className="font-poppins">
-      <Card>
-        <Row gutter={[0, 20]}>
-          <Col span={24} className="mt-16">
-            <div className=" font-poppins">User</div>
-            <div className="">User</div>
-          </Col>
-          <Col span={24}></Col>
-        </Row>
-      </Card>
+      <CardDashboard />
+
+      <div className="grid grid-cols-4 gap-4 pt-[18px]">
+        <div className="col-span-3">
+          <Card>
+            <div className="text-[18px] pb-[15px]"> รายการล่าสุด</div>
+
+            <Table />
+          </Card>
+        </div>
+
+        <div className="col-span-1 bg-white drop-shadow-sm rounded-[5px]">
+          <div className="m-[20px]  ">
+            <UpdateRequest />
+          </div>
+        </div>
+      </div>
+      <PopularRadio />
     </div>
   );
 };
