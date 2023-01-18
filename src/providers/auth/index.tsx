@@ -2,8 +2,9 @@ import { ManageNavMenu } from "layout";
 import MainAppProvider from "providers/app";
 import { createContext, useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import { IAuthContext } from "./interface";
+
+const pathPublic = ["/login", "/forgot-password"];
 
 const AuthProviderContext = createContext<IAuthContext>({});
 
@@ -24,7 +25,15 @@ const AuthProvider = ({
         navigate(part, { replace: true });
       }
       if (!token) {
-        return navigate("/login", { replace: true });
+        const check = pathPublic?.some((path) => {
+          return path.toLocaleLowerCase() === pathname.toLocaleLowerCase();
+        });
+
+        if (!!check) {
+          return navigate(pathname, { replace: true });
+        } else {
+          return navigate("/login", { replace: true });
+        }
       }
     };
     _redirect();

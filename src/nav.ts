@@ -6,10 +6,10 @@ const navMenu = [
     link: "/dashboard",
   },
   {
-    keyName: "radio_station",
+    keyName: "radio-station",
     name: "radioStation",
     icon: "",
-    link: "/dashboard",
+    link: "/radio-station",
   },
   {
     keyName: "broadcast",
@@ -18,26 +18,26 @@ const navMenu = [
     link: "/dashboard",
   },
   {
-    keyName: "station_user_info",
+    keyName: "station-user-info",
     name: "stationUserInfo",
     icon: "",
     link: "/dashboard",
   },
 
   {
-    keyName: "manage_request_info",
+    keyName: "manage-request-info",
     name: "manageRequestInfo",
     icon: "",
     link: "/dashboard",
     children: [
       {
-        keyName: "authorization_request_info",
+        keyName: "authorization-request-info",
         name: "authorizationRequestInfo",
         icon: "",
         link: "/dashboard",
       },
       {
-        keyName: "my_work1",
+        keyName: "my-work1",
         name: "myWork",
         icon: "",
         link: "/dashboard",
@@ -45,19 +45,19 @@ const navMenu = [
     ],
   },
   {
-    keyName: "broadcast_management",
+    keyName: "broadcast-management",
     name: "broadcastManagement",
     icon: "",
     link: "/dashboard",
     children: [
       {
-        keyName: "broadcast_request_info",
+        keyName: "broadcast-request-info",
         name: "broadcastRequestInfo",
         icon: "",
         link: "/dashboard",
       },
       {
-        keyName: "my_work2",
+        keyName: "my-work2",
         name: "myWork",
         icon: "",
         link: "/dashboard",
@@ -71,13 +71,13 @@ const navMenu = [
     link: "/dashboard",
     children: [
       {
-        keyName: "manage_package_info",
+        keyName: "manage-package-info",
         name: "managePackageInfo",
         icon: "",
         link: "/dashboard",
       },
       {
-        keyName: "manage_station_info",
+        keyName: "manage-station-info",
         name: "manageStationInfo",
         icon: "",
         link: "/dashboard",
@@ -91,7 +91,7 @@ const navMenu = [
         ],
       },
       {
-        keyName: "manage_help_info",
+        keyName: "manage-help-info",
         name: "manageHelpInfo",
         icon: "",
         link: "/dashboard",
@@ -103,7 +103,7 @@ const navMenu = [
             link: "/dashboard",
           },
           {
-            keyName: "help_info",
+            keyName: "help-info",
             name: "helpInfo",
             icon: "",
             link: "/dashboard",
@@ -111,19 +111,19 @@ const navMenu = [
         ],
       },
       {
-        keyName: "manage_departments",
+        keyName: "manage-departments",
         name: "manageDepartments",
         icon: "",
         link: "/dashboard",
         children: [
           {
-            keyName: "staff_info",
+            keyName: "staff-info",
             name: "staffInfo",
             icon: "",
             link: "/dashboard",
           },
           {
-            keyName: "manage_level_staff",
+            keyName: "manage-level-staff",
             name: "manageLevelStaff",
             icon: "",
             link: "/dashboard",
@@ -131,7 +131,7 @@ const navMenu = [
         ],
       },
       {
-        keyName: "personal_info",
+        keyName: "personal-info",
         name: "personalInfo",
         icon: "",
         link: "/dashboard",

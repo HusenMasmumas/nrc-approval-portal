@@ -11,9 +11,17 @@ import {
 
 const Login = () => {
   let navigate = useNavigate();
+
+  const forgotPassword = () => {
+    navigate("/forgot-password", {
+      replace: true,
+    });
+  };
   const onFinish = () => {
     localStorage.setItem("token", "Tom");
-    navigate("/dashboard");
+    navigate("/dashboard", {
+      replace: true,
+    });
   };
 
   return (
@@ -51,7 +59,12 @@ const Login = () => {
                   </Form.Item>
                 </div>
 
-                <div className=" ml-auto text-[#BC1B1C] ">ลืมรหัสผ่าน?</div>
+                <div
+                  className=" ml-auto text-[#BC1B1C] cursor-pointer hover:font-bold "
+                  onClick={forgotPassword}
+                >
+                  ลืมรหัสผ่าน?
+                </div>
               </div>
 
               <div className=" mb-10" style={{ textAlign: "center" }}>

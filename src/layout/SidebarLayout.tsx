@@ -1,35 +1,79 @@
-import { FC, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { FC, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import navMenu from "nav";
+import React from "react";
+import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
 interface INavMenu {
   keyName: string;
   name: string;
   icon: string;
   link: string;
-  children?: INavMenu;
+  children?: INavMenu[];
+}
+
+interface IManageMenu {
+  selectedKeys: string[];
+  openMenu: string[];
 }
 
 type Props = {
   collapsed?: boolean;
 };
+
 const SidebarLayout: FC<Props> = ({ collapsed }) => {
-  const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const [manageMenu, setManageMenu] = useState<IManageMenu>({} as IManageMenu);
   const { t } = useTranslation();
   let navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    let path = pathname.split("/");
+    setManageMenu({
+      ...manageMenu,
+      selectedKeys: [path?.[1] || "", path?.[3] || ""],
+    });
+
+    // eslint-disable-next-line
+  }, []);
 
   const gotoMenu = (k: any) => {
     navigate(k?.link);
   };
 
   const setValueSelectedKeys = (data: string[]) => {
-    setSelectedKeys(data);
+    setManageMenu({
+      ...manageMenu,
+      selectedKeys: data,
+    });
+  };
+
+  const checkKeyOpenMenu = (data: string) => {
+    return manageMenu?.openMenu?.includes(data);
+  };
+
+  const setValueOpenMenu = (data: string) => {
+    if (manageMenu?.openMenu?.includes(data)) {
+      setManageMenu({
+        ...manageMenu,
+        openMenu: manageMenu?.openMenu?.filter((item) => {
+          return item.toLocaleLowerCase() !== data.toLocaleLowerCase();
+        }),
+      });
+    } else {
+      setManageMenu({
+        ...manageMenu,
+        openMenu: [...(manageMenu?.openMenu || []), data],
+      });
+    }
   };
   const activeMenu = (value: INavMenu) => {
-    return selectedKeys?.some((item) => {
-      return item.toLocaleUpperCase() === value?.keyName.toLocaleUpperCase();
-    });
+    return (
+      manageMenu?.selectedKeys?.findIndex((item) => {
+        return item.toLocaleUpperCase() === value?.keyName.toLocaleUpperCase();
+      }) > -1
+    );
   };
 
   return (
@@ -54,18 +98,64 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                     if (!!child?.children) {
                       return (
                         <div key={indexChild}>
-                          <div className="text-[#141414] pl-[40px] flex text-[15px]  items-center h-[40px]">
-                            {t(child?.name)}
+                          <div
+                            className="flex items-center cursor-pointer h-[40px] hover:text-[#E02020]"
+                            onClick={() => setValueOpenMenu(child.keyName)}
+                          >
+                            <div
+                              className={` pl-[40px] flex text-[15px]  items-center h-[40px]${
+                                !!activeMenu(child)
+                                  ? "bg-[#FFF5F5] text-[#E02020] "
+                                  : "hover:bg-[#FFF5F5]  "
+                              }`}
+                            >
+                              {t(child?.name)}
+                            </div>
+                            <div className="ml-auto pr-[20px] ">
+                              <span className=" text-[13px] ">
+                                {React.createElement(
+                                  checkKeyOpenMenu(child.keyName)
+                                    ? UpOutlined
+                                    : DownOutlined
+                                )}
+                              </span>
+                            </div>
                           </div>
-                          <div>
+
+                          <div
+                            className={`${
+                              !!checkKeyOpenMenu(child.keyName)
+                                ? "details6"
+                                : "details7"
+                            }`}
+                          >
                             {child?.children?.map((childChildren, i) => {
                               return (
                                 <div
                                   key={i}
-                                  className="text-[#141414] hover:text-[#E02020] pl-[40px] flex text-[15px]  items-center h-[40px] circle"
+                                  onClick={() => {
+                                    gotoMenu(child);
+                                    setValueSelectedKeys([
+                                      child?.keyName,
+                                      childChildren?.keyName,
+                                    ]);
+                                  }}
+                                  className={` hover:text-[#E02020] pl-[40px] flex text-[15px] cursor-pointer items-center h-[40px] circle`}
                                 >
-                                  <div className="circle-menu-bar"></div>
-                                  <div className="text-[12px] ml-5 ">
+                                  <div
+                                    className={`${
+                                      !!activeMenu(childChildren)
+                                        ? "circle-menu-bar-red"
+                                        : "circle-menu-bar-black"
+                                    }`}
+                                  ></div>
+                                  <div
+                                    className={`text-[12px] ml-5 ${
+                                      !!activeMenu(childChildren)
+                                        ? "text-[#E02020]"
+                                        : ""
+                                    }`}
+                                  >
                                     {t(childChildren?.name)}
                                   </div>
                                 </div>

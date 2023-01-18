@@ -2,6 +2,7 @@ import DefaultLayout from "layout";
 import { RouteObject } from "react-router-dom";
 import NotFoundPage from "views/404";
 import Dashboard from "views/dashboard";
+import ForgotPassword from "views/forgot_password";
 import Login from "views/login";
 import Profile from "views/profile";
 import Station from "views/station";
@@ -19,6 +20,11 @@ export const routers: RouteObject[] = [
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+
   {
     path: "*",
     element: <NotFoundPage />,
@@ -38,7 +44,7 @@ export const routers: RouteObject[] = [
         index: true,
       },
       {
-        path: "/station",
+        path: "/radio-station",
         element: <Station />,
         index: true,
       },

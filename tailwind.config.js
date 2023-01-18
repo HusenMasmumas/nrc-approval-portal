@@ -8,6 +8,9 @@ module.exports = {
         NotoSansThaiBold: ["NotoSansThai-Bold", "sans-serif"],
         NotoSansThaiMedium: ["NotoSansThaiMedium"],
       },
+      colors: {
+        textBlack: "#141414",
+      },
     },
   },
   plugins: [],
