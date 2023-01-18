@@ -4,5 +4,22 @@
     "logout": "Logout",
     "password": "Password",
     "dashboard": "Dashboard",
-    "station": "Station"
+    "radioStation": "Radio station",
+    "broadcast": "Broadcast",
+    "stationUserInfo": "Station user info",
+    "manageRequestInfo": "Manage request info",
+    "authorizationRequestInfo": "Authorization request info",
+    "myWork": "My work",
+    "broadcastManagement": "Broadcast management",
+    "broadcastRequestInfo": "Broadcast Request Info",
+    "manageInfo": "Manage info",
+    "managePackageInfo": "Manage package info",
+    "manageStationInfo": "Manage station info",
+    "category": "category",
+    "manageHelpInfo": "Manage help info",
+    "helpInfo": "Help info",
+    "manageDepartments": "Manage departments",
+    "staffInfo": "Staff info",
+    "manageLevelStaff": "Manage level staff",
+    "personalInfo": "Personal Info"
 }

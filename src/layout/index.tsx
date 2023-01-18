@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import NavManu from "nav";
 import { Image, Select, Badge, Avatar } from "antd";
-import SidebarLayout from "./_SidebarLayout";
+import SidebarLayout from "./SidebarLayout";
 import ContentLayout from "./ContentLayout";
 import LogoHeader from "assets/img/LogoHeader.svg";
-import { UserOutlined } from "@ant-design/icons";
+import { BellOutlined, UserOutlined } from "@ant-design/icons";
 
 type Props = {};
 
@@ -52,12 +52,12 @@ const DefaultLayout = (props: Props) => {
             </div>
             <div className=" ml-auto">
               <div className="flex-[row wrap] flex ">
-                <div className="pr-[10px] ">
+                <div className="pr-[20px] ">
                   <Badge count={5}>
-                    <Avatar shape="square" size="large" />
+                    <BellOutlined className="text-[20px]" />
                   </Badge>
                 </div>
-                <div className="pr-[10px] ">
+                <div className="pr-[20px] ">
                   <Select
                     value={i18n.language === "th" ? "th" : "en"}
                     showSearch

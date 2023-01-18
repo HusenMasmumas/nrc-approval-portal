@@ -4,5 +4,22 @@
     "logout": "ออกจากระบบ",
     "password": "รหัสผ่าน",
     "dashboard": "หน้าหลัก",
-    "station": "สถานี"
+    "radioStation": "สถานีวิทยุ",
+    "broadcast": "Broadcast",
+    "stationUserInfo": "ข้อมูลผู้ใช้งานสถานี",
+    "manageRequestInfo": "จัดการข้อมูลคำขอ",
+    "authorizationRequestInfo": "ข้อมูลคำขออนุมัติ",
+    "myWork": "งานของฉัน",
+    "broadcastManagement": "จัดการการถ่ายทอด",
+    "broadcastRequestInfo": "ข้อมูลคำขอออกอากาศ",
+    "manageInfo": "บริหารจัดการข้อมูล",
+    "managePackageInfo": "จัดการข้อมูลแพคเกจ",
+    "manageStationInfo": "จัดการข้อมูลสถานี",
+    "category": "หมวดหมู่",
+    "manageHelpInfo": "จัดการข้อมูลช่วยเหลือ",
+    "helpInfo": "ข้อมูลความช่วยเหลือ",
+    "manageDepartments": "จัดการหน่วยงาน",
+    "staffInfo": "ข้อมูลเจ้าหน้าที่",
+    "manageLevelStaff": "จัดการระดับเจ้าหน้าที่",
+    "personalInfo": "ข้อมูลส่วนตัว"
 }
