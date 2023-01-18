@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'NotoSansThai-Bold';
+    src: url('NotoSansThai-Bold.ttf') format('opentype'),
+        url('NotoSansThai-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansThai-Bold';
+    src: url('NotoSansThai-Bold.ttf') format('opentype'),
+        url('NotoSansThai-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansThai';
+    src: url('NotoSansThai-Light.ttf') format('opentype'),
+        url('NotoSansThai-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansThai';
+    src: url('NotoSansThai-Light.ttf') format('opentype'),
+        url('NotoSansThai-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansThaiMedium';
+    src: url("NotoSansThai-Medium.ttf") format('opentype'),
+        url('NotoSansThai-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html {
+    font-family: 'NotoSansThai';
+}
