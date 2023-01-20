@@ -6,6 +6,11 @@ import { ButtonThemeTypes, InputThemeTypes } from "./interface";
 
 export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
   height: ${({ thm }) => thm?.height || "40px"};
+  width: ${({ thm }) => thm?.width || "100%"};
+  background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+  .ant-input {
+    background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+  }
 `;
 
 export const StyledInputPassword = styled(Input.Password)<{

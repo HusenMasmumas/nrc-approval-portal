@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
+import "./index.css";
 import NavManu from "nav";
-import { Image, Select, Badge, Avatar } from "antd";
 import SidebarLayout from "./SidebarLayout";
 import ContentLayout from "./ContentLayout";
-import LogoHeader from "assets/img/LogoHeader.svg";
-import { BellOutlined, UserOutlined } from "@ant-design/icons";
+import HeaderLayout from "./HeaderLayout";
+import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 type Props = {};
 
@@ -29,63 +29,29 @@ export const ManageNavMenu = () => {
 };
 
 const DefaultLayout = (props: Props) => {
-  const { i18n } = useTranslation();
-
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    localStorage.setItem("local-lang", lang);
-  };
+  const sc = useRef<any>();
+  const { pathname } = useLocation();
+  // useEffect(() => {
+  //   sc.current.scrollTo({ top: 0, behavior: "smooth" });
+  // }, [pathname]);
   return (
     <>
       <div className=" h-[100vh]">
-        <div
-          style={{
-            borderBottom: "2px solid #bebebe5e",
-            paddingInline: 50,
-            lineHeight: "70px",
-          }}
-          className="h-[70px]  bg-white"
-        >
-          <div className="flex flex-[row wrap] ">
-            <div style={{ position: "relative", maxWidth: "100%" }}>
-              <Image src={LogoHeader} preview={false} height={20} />
-            </div>
-            <div className=" ml-auto">
-              <div className="flex-[row wrap] flex ">
-                <div className="pr-[20px] ">
-                  <Badge count={5}>
-                    <BellOutlined className="text-[20px]" />
-                  </Badge>
-                </div>
-                <div className="pr-[20px] ">
-                  <Select
-                    value={i18n.language === "th" ? "th" : "en"}
-                    showSearch
-                    onChange={changeLanguage}
-                    options={[
-                      {
-                        value: "th",
-                        label: "TH",
-                      },
-                      {
-                        value: "en",
-                        label: "EN",
-                      },
-                    ]}
-                  />
-                </div>
-                <div>
-                  <Avatar size={40} icon={<UserOutlined />} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeaderLayout />
         <div className="flex flex-[row wrap]">
           <SidebarLayout />
-          <div className="w-[calc(100vw-260px)]  bg-[#F6F9FC]  h-[calc(100vh-70px)] overflow-y-auto">
-            <div className="p-[30px] ">
-              <ContentLayout />
+
+          <div className="flex flex-col bg-[#F6F9FC] ">
+            <div
+              ref={sc}
+              className="w-[calc(100vw-260px)]   h-[calc(100vh-70px)] overflow-y-auto"
+            >
+              <div className="p-[30px]  ">
+                <ContentLayout />
+                <div className="pt-[30px] text-10 ">
+                  Copyright © 2020 NRC. All rights reserved.
+                </div>
+              </div>
             </div>
           </div>
         </div>

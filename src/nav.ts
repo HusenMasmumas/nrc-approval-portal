@@ -15,7 +15,7 @@ const navMenu = [
     keyName: "broadcast",
     name: "broadcast",
     icon: "",
-    link: "/dashboard",
+    link: "/broadcast",
   },
   {
     keyName: "station-user-info",

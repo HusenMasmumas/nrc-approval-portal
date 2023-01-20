@@ -1,5 +1,7 @@
 export interface InputThemeTypes {
-  height: string;
+  height?: string;
+  width?: string;
+  backgroundColor?: string;
 }
 
 export interface ButtonThemeTypes {

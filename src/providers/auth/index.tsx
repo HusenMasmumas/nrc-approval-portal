@@ -20,8 +20,9 @@ const AuthProvider = ({
   useEffect(() => {
     let menuInfo = ManageNavMenu();
     let part = menuInfo[0]?.link;
+
     const _redirect = () => {
-      if (pathname === "/login") {
+      if (pathname === "/login" || pathname === "/") {
         navigate(part, { replace: true });
       }
       if (!token) {
@@ -37,6 +38,7 @@ const AuthProvider = ({
       }
     };
     _redirect();
+
     // eslint-disable-next-line
   }, [navigate, pathname]);
 

@@ -1,6 +1,7 @@
 import DefaultLayout from "layout";
 import { RouteObject } from "react-router-dom";
 import NotFoundPage from "views/404";
+import Broadcast from "views/broadcast";
 import Dashboard from "views/dashboard";
 import ForgotPassword from "views/forgot_password";
 import Login from "views/login";
@@ -46,6 +47,11 @@ export const routers: RouteObject[] = [
       {
         path: "/radio-station",
         element: <Station />,
+        index: true,
+      },
+      {
+        path: "/broadcast",
+        element: <Broadcast />,
         index: true,
       },
     ],

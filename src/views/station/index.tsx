@@ -1,97 +1,65 @@
-import React, { useState } from "react";
-import { Table } from "antd";
-import type { ColumnsType } from "antd/es/table";
-import type { TableRowSelection } from "antd/es/table/interface";
-
-interface DataType {
-  key: React.Key;
-  name: string;
-  age: number;
-  address: string;
-}
-
-const columns: ColumnsType<DataType> = [
-  {
-    title: "Name",
-    dataIndex: "name",
-  },
-  {
-    title: "Age",
-    dataIndex: "age",
-  },
-  {
-    title: "Address",
-    dataIndex: "address",
-  },
-];
-
-const data: DataType[] = [];
-for (let i = 0; i < 46; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
-  });
-}
+import { StyledInput } from "components/styled/Styled";
+import { SearchOutlined } from "@ant-design/icons";
+import Table from "./Table";
+import CardList from "./CardList";
+import { useState } from "react";
+import { Image } from "antd";
+import UnorderedListOutlined from "assets/icon/unordered_list_outlined.svg";
+import AppStoreOutlined from "assets/icon/appstore_outlined.svg";
+import MainPaginationProvider from "providers/pagination";
+import { IPagination } from "providers/pagination/interface";
 
 const Station = () => {
-  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-
-  const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
-    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
-    setSelectedRowKeys(newSelectedRowKeys);
-  };
-  const rowSelection: TableRowSelection<DataType> = {
-    selectedRowKeys,
-    onChange: onSelectChange,
-    selections: [
-      Table.SELECTION_ALL,
-      Table.SELECTION_INVERT,
-      Table.SELECTION_NONE,
-      {
-        key: "odd",
-        text: "Select Odd Row",
-        onSelect: (changableRowKeys) => {
-          let newSelectedRowKeys = [];
-          newSelectedRowKeys = changableRowKeys.filter((_, index) => {
-            if (index % 2 !== 0) {
-              return false;
-            }
-            return true;
-          });
-          setSelectedRowKeys(newSelectedRowKeys);
-        },
-      },
-      {
-        key: "even",
-        text: "Select Even Row",
-        onSelect: (changableRowKeys) => {
-          let newSelectedRowKeys = [];
-          newSelectedRowKeys = changableRowKeys.filter((_, index) => {
-            if (index % 2 !== 0) {
-              return true;
-            }
-            return false;
-          });
-          setSelectedRowKeys(newSelectedRowKeys);
-        },
-      },
-    ],
+  const [open, setOpen] = useState(true);
+  const [page, setPage] = useState<IPagination>({
+    total: 90,
+    currentPage: 1,
+    limitPage: 10,
+  });
+  const setValueOpen = () => {
+    setOpen(!open);
   };
   return (
-    <div>
-      <div className="text-2xl">สถานีวิทยุ</div>
-      <div>ทั้งหมด(5)</div>
+    <MainPaginationProvider value={{ page: page, setPage: setPage }}>
+      <div>
+        <div className="text-2xl">สถานีวิทยุ</div>
+        <div>ทั้งหมด(5)</div>
 
-      <div className=" mt-10">
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-        />
+        <div className=" mt-[20px]">
+          <div className=" flex mb-[20px] items-center">
+            <div>
+              <StyledInput
+                thm={{
+                  height: "38px",
+                  width: "331px",
+                }}
+                prefix={<SearchOutlined />}
+                placeholder="ค้นหา"
+              />
+            </div>
+            <div className="ml-auto">
+              {!!open ? (
+                <div className=" cursor-pointer" onClick={setValueOpen}>
+                  <Image src={AppStoreOutlined} preview={false} />{" "}
+                </div>
+              ) : (
+                <div className=" cursor-pointer" onClick={setValueOpen}>
+                  <Image src={UnorderedListOutlined} preview={false} />
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className={`${!!open ? "open_list" : " hidden "}`}>
+            <Table />
+          </div>
+
+          <div className={`${!!open ? " hidden " : "open_list"}`}>
+            <CardList />
+          </div>
+        </div>
       </div>
-    </div>
+    </MainPaginationProvider>
   );
 };
 

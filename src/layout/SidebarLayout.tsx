@@ -125,8 +125,8 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                           <div
                             className={`${
                               !!checkKeyOpenMenu(child.keyName)
-                                ? "details6"
-                                : "details7"
+                                ? "open_menu"
+                                : "close_menu"
                             }`}
                           >
                             {child?.children?.map((childChildren, i) => {

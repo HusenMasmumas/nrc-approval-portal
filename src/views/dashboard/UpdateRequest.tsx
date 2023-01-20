@@ -40,7 +40,7 @@ const UpdateRequest = () => {
       <div className="flex flex-[row wrap] items-center">
         <div>อัพเดตคำขอ</div>
         <div className="ml-[auto]">
-          <DatePicker format="DD-MM-YY" />
+          <DatePicker format="DD/MM/BB" />
         </div>
       </div>
 
