@@ -94,19 +94,19 @@ const navMenu = [
         keyName: "manage-help-info",
         name: "manageHelpInfo",
         icon: "",
-        link: "/dashboard",
+        link: "",
         children: [
           {
-            keyName: "category2",
+            keyName: "manage-help-category",
             name: "category",
             icon: "",
-            link: "/dashboard",
+            link: "/manage-help-category",
           },
           {
             keyName: "help-info",
             name: "helpInfo",
             icon: "",
-            link: "/dashboard",
+            link: "/help-info",
           },
         ],
       },

@@ -2,7 +2,6 @@ import Radio from "assets/img/dashboard/radio.jpg";
 import StatusTable from "components/status/Status";
 import MoImage from "components/image/Image";
 import { dayjs } from "tools/timezone";
-import { EllipsisOutlined } from "@ant-design/icons";
 import Heart from "assets/icon/heart.svg";
 import Play from "assets/icon/play.svg";
 import Comment from "assets/icon/comment.svg";

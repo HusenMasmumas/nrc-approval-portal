@@ -9,6 +9,7 @@ import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
 import MoImage from "components/image/Image";
 import { useTranslation } from "react-i18next";
+import HeaderContent from "components/header_content/HeaderContent";
 
 const Station = () => {
   const [open, setOpen] = useState(true);
@@ -24,8 +25,7 @@ const Station = () => {
   return (
     <MainPaginationProvider value={{ page: page, setPage: setPage }}>
       <div>
-        <div className="text-2xl">{t("radioStation")}</div>
-        <div>ทั้งหมด(5)</div>
+        <HeaderContent title={t("radioStation")} />
 
         <div className=" mt-[20px]">
           <div className=" flex mb-[20px] items-center">

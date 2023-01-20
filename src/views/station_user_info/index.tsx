@@ -1,4 +1,5 @@
 import { SearchOutlined } from "@ant-design/icons";
+import HeaderContent from "components/header_content/HeaderContent";
 import MoIcon from "components/icon/Icon";
 import { StyledButton, StyledInput } from "components/styled/Styled";
 import MainPaginationProvider from "providers/pagination";
@@ -8,18 +9,17 @@ import { useTranslation } from "react-i18next";
 import Table from "./Table";
 
 const StationUserInfo = () => {
+  const { t } = useTranslation();
   const [page, setPage] = useState<IPagination>({
     total: 90,
     currentPage: 1,
     limitPage: 10,
   });
-  const { t } = useTranslation();
+
   return (
     <MainPaginationProvider value={{ page: page, setPage: setPage }}>
       <div>
-        <div className="text-2xl">{t("stationUserInfo")}</div>
-        <div>ทั้งหมด(5)</div>
-
+        <HeaderContent title={t("stationUserInfo")} />
         <div className=" mt-[20px]">
           <div className=" flex mb-[20px] items-center">
             <div>

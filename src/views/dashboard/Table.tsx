@@ -34,7 +34,7 @@ const Table = () => {
       dataIndex: "status",
       key: "status",
       render: (status: string) => {
-        return <StatusTable keyData={6} />;
+        return <StatusTable keyData={1} />;
       },
     },
 

@@ -5,6 +5,8 @@ import Broadcast from "views/broadcast";
 import Dashboard from "views/dashboard";
 import ForgotPassword from "views/forgot_password";
 import Login from "views/login";
+import ManageHelpCategory from "views/manage_help_info/category";
+import HelpInfo from "views/manage_help_info/helpInfo";
 import Profile from "views/profile";
 import Station from "views/station";
 import StationUserInfo from "views/station_user_info";
@@ -58,6 +60,16 @@ export const routers: RouteObject[] = [
       {
         path: "/station-user-info",
         element: <StationUserInfo />,
+        index: true,
+      },
+      {
+        path: "/help-info",
+        element: <HelpInfo />,
+        index: true,
+      },
+      {
+        path: "/manage-help-category",
+        element: <ManageHelpCategory />,
         index: true,
       },
     ],

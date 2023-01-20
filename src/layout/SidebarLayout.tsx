@@ -134,7 +134,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                                 <div
                                   key={i}
                                   onClick={() => {
-                                    gotoMenu(child);
+                                    gotoMenu(childChildren);
                                     setValueSelectedKeys([
                                       child?.keyName,
                                       childChildren?.keyName,
