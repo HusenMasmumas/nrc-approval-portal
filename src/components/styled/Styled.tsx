@@ -1,4 +1,4 @@
-import { Input, Button } from "antd";
+import { Input, Button, Avatar } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -26,6 +26,7 @@ export const StyledInputPassword = styled(Input.Password)<{
 
 export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
   height: ${({ thm }) => thm?.height || "45px"};
+  width: ${({ thm }) => thm?.width || "100%"};
   box-shadow: #e02020;
   border-color: #e02020;
   ${tw`text-white bg-[#E02020] w-full`};
@@ -43,4 +44,22 @@ export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
 
 export const StyledHeader = styled(Header)`
   height: 64px;
+`;
+
+export const StyledAvatar = styled(Avatar)`
+  &.ant-avatar {
+    ${tw`border-0`}
+  }
+`;
+
+export const StyledDivBorder = styled.div`
+  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px] flex justify-center items-center  `};
+`;
+
+export const StyledSpanBorder = styled.span`
+  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px]`};
+`;
+
+export const StyledDivPaddingLeft = styled.div`
+  ${tw`ml-[10px]`}
 `;

@@ -3,6 +3,7 @@ import { TableRowSelection } from "antd/es/table/interface";
 import MoTable from "components/table/Table";
 import React, { useState } from "react";
 import MoIcon from "components/icon/Icon";
+import { StyledDivPaddingLeft } from "components/styled/Styled";
 
 const Table = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -128,9 +129,15 @@ const Table = () => {
       render: (listeningCount: string) => {
         return (
           <div className="flex items-center">
-            <MoIcon keyData="view" onClick={onView} />
-            <MoIcon keyData="clock" onClick={onClock} />
-            <MoIcon keyData="menu" onClick={onClock} />
+            <StyledDivPaddingLeft>
+              <MoIcon keyData="view" onClick={onView} />
+            </StyledDivPaddingLeft>
+            <StyledDivPaddingLeft>
+              <MoIcon keyData="clock" onClick={onClock} />
+            </StyledDivPaddingLeft>
+            <StyledDivPaddingLeft>
+              <MoIcon keyData="menu" onClick={onClock} />
+            </StyledDivPaddingLeft>
           </div>
         );
       },

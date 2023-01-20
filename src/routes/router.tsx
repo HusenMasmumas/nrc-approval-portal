@@ -7,6 +7,7 @@ import ForgotPassword from "views/forgot_password";
 import Login from "views/login";
 import Profile from "views/profile";
 import Station from "views/station";
+import StationUserInfo from "views/station_user_info";
 
 export interface IRouter {
   path: string;
@@ -52,6 +53,11 @@ export const routers: RouteObject[] = [
       {
         path: "/broadcast",
         element: <Broadcast />,
+        index: true,
+      },
+      {
+        path: "/station-user-info",
+        element: <StationUserInfo />,
         index: true,
       },
     ],

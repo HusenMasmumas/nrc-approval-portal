@@ -3,17 +3,13 @@ import StatusTable from "components/status/Status";
 import MoImage from "components/image/Image";
 import { dayjs } from "tools/timezone";
 import { EllipsisOutlined } from "@ant-design/icons";
-import styled from "styled-components";
-import tw from "twin.macro";
 import Heart from "assets/icon/heart.svg";
 import Play from "assets/icon/play.svg";
 import Comment from "assets/icon/comment.svg";
 import Share from "assets/icon/share.svg";
 import MoPagination from "components/pagination/Pagination";
-
-export const StyledDiv = styled.div`
-  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px]`};
-`;
+import { StyledDivBorder } from "components/styled/Styled";
+import MoIcon from "components/icon/Icon";
 
 const obj = [
   {
@@ -55,15 +51,22 @@ const ListBroadcast = () => {
                   </div>
                   <StatusTable keyData={6} />
                   <div className=" ml-auto flex justify-end">
-                    <StyledDiv className="mr-[10px]">
+                    <StyledDivBorder className="mr-[10px]">
                       {dayjs().format("DD/MM/BB")}
-                    </StyledDiv>
+                    </StyledDivBorder>
 
-                    <StyledDiv className="mr-[10px]">09:00-11:00</StyledDiv>
+                    <StyledDivBorder className="mr-[10px]">
+                      09:00-11:00
+                    </StyledDivBorder>
 
-                    <StyledDiv className=" cursor-pointer text-[#6F7F91] ">
-                      <EllipsisOutlined />
-                    </StyledDiv>
+                    <StyledDivBorder>
+                      <MoIcon
+                        keyData="menu"
+                        classDiv={{
+                          className: " justify-center flex items-center ",
+                        }}
+                      />
+                    </StyledDivBorder>
                   </div>
                 </div>
                 <div className=" flex items-center text-[12px] text-[#6F7F91] mt-[15px]">
