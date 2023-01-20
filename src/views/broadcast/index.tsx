@@ -3,9 +3,11 @@ import { StyledInput } from "components/styled/Styled";
 import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ListBroadcast from "./ListBroadcast";
 
 const Broadcast = () => {
+  const { t } = useTranslation();
   const [page, setPage] = useState<IPagination>({
     total: 90,
     currentPage: 1,
@@ -14,7 +16,7 @@ const Broadcast = () => {
   return (
     <MainPaginationProvider value={{ page: page, setPage: setPage }}>
       <div>
-        <div className="text-2xl">Broadcast</div>
+        <div className="text-2xl">{t("broadcast")}</div>
         <div>ทั้งหมด(3)</div>
 
         <div className=" mt-[20px]">

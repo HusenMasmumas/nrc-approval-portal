@@ -1,4 +1,4 @@
-import { DatePicker, Image } from "antd";
+import { DatePicker } from "antd";
 import { Fragment } from "react";
 import Wait from "assets/icon/dashboard/wait.svg";
 import Adjust from "assets/icon/dashboard/adjust.svg";
@@ -6,6 +6,7 @@ import Between from "assets/icon/dashboard/between.svg";
 import Approve from "assets/icon/dashboard/approve.svg";
 import Disapproved from "assets/icon/dashboard/disapproved.svg";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import MoImage from "components/image/Image";
 
 const UpdateRequest = () => {
   const request = [
@@ -56,7 +57,7 @@ const UpdateRequest = () => {
           <Fragment key={i}>
             <div className="flex items-center text-[#6C757D]">
               <div className=" mr-[10px]">
-                <Image src={item?.icon} preview={false} width={25} />
+                <MoImage src={item?.icon} preview={false} width={25} />
               </div>
               <div>{item?.name}</div>
               <div className="ml-[auto]">30</div>

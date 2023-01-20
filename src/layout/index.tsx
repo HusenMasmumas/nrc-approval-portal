@@ -3,7 +3,7 @@ import NavManu from "nav";
 import SidebarLayout from "./SidebarLayout";
 import ContentLayout from "./ContentLayout";
 import HeaderLayout from "./HeaderLayout";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 type Props = {};
@@ -31,24 +31,24 @@ export const ManageNavMenu = () => {
 const DefaultLayout = (props: Props) => {
   const sc = useRef<any>();
   const { pathname } = useLocation();
-  // useEffect(() => {
-  //   sc.current.scrollTo({ top: 0, behavior: "smooth" });
-  // }, [pathname]);
+  useEffect(() => {
+    sc.current.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
   return (
     <>
-      <div className=" h-[100vh]">
+      <div className=" h-[100vh] ">
         <HeaderLayout />
         <div className="flex flex-[row wrap]">
           <SidebarLayout />
 
-          <div className="flex flex-col bg-[#F6F9FC] ">
+          <div className="flex flex-col bg-[#F6F9FC] text-[15px] ">
             <div
               ref={sc}
               className="w-[calc(100vw-260px)]   h-[calc(100vh-70px)] overflow-y-auto"
             >
               <div className="p-[30px]  ">
                 <ContentLayout />
-                <div className="pt-[30px] text-10 ">
+                <div className="pt-[30px] text-10 font-NotoSansThai ">
                   Copyright © 2020 NRC. All rights reserved.
                 </div>
               </div>

@@ -1,3 +1,16 @@
+.ant-select *,
+.ant-select-item-option-content,
+.ant-checkbox-wrapper,
+.ant-card-body,
+.ant-pagination *,
+.ant-picker *,
+.ant-picker-panel *,
+.ant-table table {
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium"
+}
+
+
+
 .ant-popover-arrow {
     display: none !important;
 }

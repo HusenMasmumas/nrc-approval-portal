@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'NotoSansThai-Bold';
+    font-family: 'NotoSansThaiBold';
     src: url('NotoSansThai-Bold.ttf') format('opentype'),
         url('NotoSansThai-Bold.ttf') format('truetype');
     font-weight: bold;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: 'NotoSansThai-Bold';
+    font-family: 'NotoSansThaiBold';
     src: url('NotoSansThai-Bold.ttf') format('opentype'),
         url('NotoSansThai-Bold.ttf') format('truetype');
     font-weight: bold;

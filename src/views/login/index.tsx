@@ -1,6 +1,5 @@
 import { Checkbox, Form } from "antd";
 import { useNavigate } from "react-router-dom";
-import { Image } from "antd";
 import Logo from "assets/img/Logo.svg";
 import "index.css";
 import {
@@ -8,6 +7,7 @@ import {
   StyledInput,
   StyledInputPassword,
 } from "components/styled/Styled";
+import MoImage from "components/image/Image";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -26,10 +26,10 @@ const Login = () => {
 
   return (
     <Form onFinish={onFinish}>
-      <div className=" flex h-screen justify-center ">
+      <div className=" flex h-screen justify-center font-NotoSansThai ">
         <div className="m-auto">
           <div className="flex justify-center mb-[40px]">
-            <Image width={150} src={Logo} preview={false} />
+            <MoImage width={150} src={Logo} preview={false} />
           </div>
 
           <div className=" bg-white h-[440px] w-[400px] p-[40px]">

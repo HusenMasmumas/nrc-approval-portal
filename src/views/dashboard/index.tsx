@@ -6,13 +6,13 @@ import UpdateRequest from "./UpdateRequest";
 
 const Dashboard = () => {
   return (
-    <div className="font-poppins">
+    <div>
       <CardDashboard />
 
-      <div className="grid grid-cols-4 gap-4 pt-[18px]">
+      <div className="grid grid-cols-4 gap-4 pt-[18px] font-NotoSansThai">
         <div className="col-span-3">
           <Card>
-            <div className="text-[18px] pb-[15px]"> รายการล่าสุด</div>
+            <div className="text-[18px] pb-[15px] ">รายการล่าสุด</div>
 
             <Table />
           </Card>

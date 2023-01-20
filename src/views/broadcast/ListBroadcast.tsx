@@ -1,38 +1,100 @@
-import React from "react";
-import { Image } from "antd";
 import Radio from "assets/img/dashboard/radio.jpg";
+import StatusTable from "components/status/Status";
+import MoImage from "components/image/Image";
+import { dayjs } from "tools/timezone";
+import { EllipsisOutlined } from "@ant-design/icons";
+import styled from "styled-components";
+import tw from "twin.macro";
+import Heart from "assets/icon/heart.svg";
+import Play from "assets/icon/play.svg";
+import Comment from "assets/icon/comment.svg";
+import Share from "assets/icon/share.svg";
+import MoPagination from "components/pagination/Pagination";
+
+export const StyledDiv = styled.div`
+  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px]`};
+`;
+
+const obj = [
+  {
+    icon: Heart,
+    value: 1,
+    key: 1,
+  },
+  {
+    icon: Play,
+    value: 0,
+    key: 2,
+  },
+  {
+    icon: Share,
+    value: 0,
+    key: 3,
+  },
+  {
+    icon: Comment,
+    value: 0,
+    key: 4,
+  },
+];
 
 const ListBroadcast = () => {
   return (
-    <div className="bg-white w-full p-[15px]">
-      <div className=" h-[141.21px] flex ">
-        <div className=" pr-[10px] font-NotoSansThaiBold">
-          <Image
-            className="object-cover"
-            src={Radio}
-            preview={false}
-            width={124}
-            height={121.82}
-          />
-        </div>
-        <div>
-          <div className="flex items-center ">
-            <div className="pr-[15px] text-[25px]"> Smooth Radio</div>
+    <div className="bg-white w-full p-[15px] ">
+      {new Array(10).fill("").map((_, i) => {
+        return (
+          <div key={i}>
+            <div className=" h-[141.21px] flex ">
+              <div className=" pr-[10px] font-NotoSansThaiBold">
+                <MoImage src={Radio} width={124} height={121.82} />
+              </div>
+              <div className=" flex flex-col w-full">
+                <div className="flex  items-center">
+                  <div className="pr-[15px] text-[30px] font-bold ">
+                    Smooth Radio
+                  </div>
+                  <StatusTable keyData={6} />
+                  <div className=" ml-auto flex justify-end">
+                    <StyledDiv className="mr-[10px]">
+                      {dayjs().format("DD/MM/BB")}
+                    </StyledDiv>
 
-            <div className="flex items-center p-[3px] bg-[#EAF7ED] rounded-[30px]">
-              <div className="circle-status bg-[#28A745]" />
-              <div className="text-[10px] pl-[5px] text-[#28A745]">
-                <span>{"on-air".toLocaleUpperCase()}</span>
+                    <StyledDiv className="mr-[10px]">09:00-11:00</StyledDiv>
+
+                    <StyledDiv className=" cursor-pointer text-[#6F7F91] ">
+                      <EllipsisOutlined />
+                    </StyledDiv>
+                  </div>
+                </div>
+                <div className=" flex items-center text-[12px] text-[#6F7F91] mt-[15px]">
+                  <div className="mr-[10px]">N161165008</div>
+                  <div className="mr-[10px]">
+                    Last Online Check : 10/05/65 11:00
+                  </div>
+                </div>
+                <div className=" flex items-center text-[12px] text-[#6F7F91] w-[80%]  mt-[10px]">
+                  <div className="grid grid-cols-4 gap-[50px] items-center">
+                    {obj.map((item, i) => {
+                      return (
+                        <div className="flex" key={i}>
+                          <div className="mr-[5px] ">
+                            <MoImage src={item?.icon} height={15} />
+                          </div>
+                          <div>{item?.value}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="border-b-[1px] border-[#D9DEE4] flex justify-center ml-[15px] mr-[15px] mb-[10px]" />
           </div>
-        </div>
-
-        <div></div>
+        );
+      })}
+      <div className="flex justify-end mt-[20px]">
+        <MoPagination />
       </div>
-      <div className="border-b-[1px] border-[#D9DEE4] flex justify-center ml-[15px] mr-[15px]" />
-
-      <div className="h-[141.21px]">aaa</div>
     </div>
   );
 };

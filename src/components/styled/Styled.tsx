@@ -10,6 +10,11 @@ export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
   background-color: ${({ thm }) => thm?.backgroundColor || "white"};
   .ant-input {
     background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
+  }
+  &.ant-input {
+    background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
   }
 `;
 
@@ -24,12 +29,15 @@ export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
   box-shadow: #e02020;
   border-color: #e02020;
   ${tw`text-white bg-[#E02020] w-full`};
+  &.ant-btn {
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
+  }
   &:hover,
   &:active,
   &:focus {
     color: #ffffff !important;
     border-color: #e02020 !important;
-    ${tw`text-white  w-full`}
+    ${tw`text-white  w-full`};
   }
 `;
 

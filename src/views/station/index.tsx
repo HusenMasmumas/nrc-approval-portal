@@ -3,14 +3,16 @@ import { SearchOutlined } from "@ant-design/icons";
 import Table from "./Table";
 import CardList from "./CardList";
 import { useState } from "react";
-import { Image } from "antd";
 import UnorderedListOutlined from "assets/icon/unordered_list_outlined.svg";
 import AppStoreOutlined from "assets/icon/appstore_outlined.svg";
 import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
+import MoImage from "components/image/Image";
+import { useTranslation } from "react-i18next";
 
 const Station = () => {
   const [open, setOpen] = useState(true);
+  const { t } = useTranslation();
   const [page, setPage] = useState<IPagination>({
     total: 90,
     currentPage: 1,
@@ -22,7 +24,7 @@ const Station = () => {
   return (
     <MainPaginationProvider value={{ page: page, setPage: setPage }}>
       <div>
-        <div className="text-2xl">สถานีวิทยุ</div>
+        <div className="text-2xl">{t("radioStation")}</div>
         <div>ทั้งหมด(5)</div>
 
         <div className=" mt-[20px]">
@@ -40,11 +42,11 @@ const Station = () => {
             <div className="ml-auto">
               {!!open ? (
                 <div className=" cursor-pointer" onClick={setValueOpen}>
-                  <Image src={AppStoreOutlined} preview={false} />{" "}
+                  <MoImage src={AppStoreOutlined} preview={false} />{" "}
                 </div>
               ) : (
                 <div className=" cursor-pointer" onClick={setValueOpen}>
-                  <Image src={UnorderedListOutlined} preview={false} />
+                  <MoImage src={UnorderedListOutlined} preview={false} />
                 </div>
               )}
             </div>

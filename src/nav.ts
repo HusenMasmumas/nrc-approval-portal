@@ -21,20 +21,20 @@ const navMenu = [
     keyName: "station-user-info",
     name: "stationUserInfo",
     icon: "",
-    link: "/dashboard",
+    link: "/station-user-info",
   },
 
   {
     keyName: "manage-request-info",
     name: "manageRequestInfo",
     icon: "",
-    link: "/dashboard",
+    link: "/manage-request-info",
     children: [
       {
         keyName: "authorization-request-info",
         name: "authorizationRequestInfo",
         icon: "",
-        link: "/dashboard",
+        link: "/authorization-request-info",
       },
       {
         keyName: "my-work1",

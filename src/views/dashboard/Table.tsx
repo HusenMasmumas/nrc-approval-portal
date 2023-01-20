@@ -1,3 +1,4 @@
+import StatusTable from "components/status/Status";
 import MoTable from "components/table/Table";
 import { dayjs } from "tools/timezone";
 
@@ -33,13 +34,7 @@ const Table = () => {
       dataIndex: "status",
       key: "status",
       render: (status: string) => {
-        return (
-          <div className="text-[#EB8749] ">
-            <span className="bg-[#FFFBED] pl-[10px] pr-[10px] rounded-[30px]">
-              รอรับเรื่อง
-            </span>
-          </div>
-        );
+        return <StatusTable keyData={6} />;
       },
     },
 

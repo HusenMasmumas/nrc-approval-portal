@@ -1,10 +1,8 @@
-import { Select, Image } from "antd";
+import { Select } from "antd";
 import { TableRowSelection } from "antd/es/table/interface";
 import MoTable from "components/table/Table";
 import React, { useState } from "react";
-import Clock from "assets/icon/clock.svg";
-import View from "assets/icon/view.svg";
-import { EllipsisOutlined } from "@ant-design/icons";
+import MoIcon from "components/icon/Icon";
 
 const Table = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -15,6 +13,9 @@ const Table = () => {
     selectedRowKeys,
     onChange: onSelectChange,
   };
+
+  const onView = () => {};
+  const onClock = () => {};
 
   const columns: any = [
     {
@@ -127,15 +128,9 @@ const Table = () => {
       render: (listeningCount: string) => {
         return (
           <div className="flex items-center">
-            <div className="ml-[10px] cursor-pointer">
-              <Image src={View} preview={false} />
-            </div>
-            <div className="ml-[10px] cursor-pointer">
-              <Image src={Clock} preview={false} />
-            </div>
-            <div className="ml-[10px] cursor-pointer text-[#6F7F91] text-[20px]">
-              <EllipsisOutlined />
-            </div>
+            <MoIcon keyData="view" onClick={onView} />
+            <MoIcon keyData="clock" onClick={onClock} />
+            <MoIcon keyData="menu" onClick={onClock} />
           </div>
         );
       },

@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         NotoSansThai: ["NotoSansThai", "sans-serif"],
-        NotoSansThaiBold: ["NotoSansThai-Bold", "sans-serif"],
+        NotoSansThaiBold: ["NotoSansThaiBold", "sans-serif"],
         NotoSansThaiMedium: ["NotoSansThaiMedium"],
       },
       colors: {

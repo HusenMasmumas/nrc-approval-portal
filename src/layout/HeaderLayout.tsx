@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { Image, Select, Badge, Avatar } from "antd";
+import { Select, Badge, Avatar } from "antd";
 import LogoHeader from "assets/img/LogoHeader.svg";
 import { BellOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { StyledInput } from "components/styled/Styled";
+import MoImage from "components/image/Image";
 
 const HeaderLayout = () => {
   const { i18n } = useTranslation();
@@ -22,7 +23,7 @@ const HeaderLayout = () => {
     >
       <div className="flex flex-[row wrap] ">
         <div style={{ position: "relative", maxWidth: "100%" }}>
-          <Image src={LogoHeader} preview={false} height={20} />
+          <MoImage src={LogoHeader} preview={false} height={20} />
         </div>
         <div className=" ml-auto">
           <div className="flex-[row wrap] flex ">
