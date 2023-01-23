@@ -12,7 +12,7 @@ export interface IMenu {
   keyName: string;
   name: string;
   icon?: any;
-  link: string;
+  link?: string;
 }
 
 export const ManageNavMenu = () => {

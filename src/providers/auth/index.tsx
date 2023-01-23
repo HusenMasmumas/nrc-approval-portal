@@ -19,7 +19,7 @@ const AuthProvider = ({
 
   useEffect(() => {
     let menuInfo = ManageNavMenu();
-    let part = menuInfo[0]?.link;
+    let part = menuInfo[0]?.link || "";
 
     const _redirect = () => {
       if (pathname === "/login" || pathname === "/") {

@@ -2,7 +2,11 @@ import { Input, Button, Avatar } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { ButtonThemeTypes, InputThemeTypes } from "./interface";
+import {
+  ButtonThemeTypes,
+  InputThemeTypes,
+  StatusThemeTypes,
+} from "./interface";
 
 export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
   height: ${({ thm }) => thm?.height || "40px"};
@@ -65,4 +69,12 @@ export const StyledSpanBorder = styled.span`
 
 export const StyledDivPaddingLeft = styled.div`
   ${tw`ml-[10px]`}
+`;
+
+export const StyledStatus = styled.div<{ thm?: StatusThemeTypes }>`
+  border-radius: 50%;
+  width: ${({ thm }) => thm?.width || "7px"};
+  height: ${({ thm }) => thm?.width || "7px"};
+  background-color: ${({ thm }) => thm?.bg || "#BC1B1C"};
+  border: 1px solid ${({ thm }) => thm?.border || "#BC1B1C"};
 `;

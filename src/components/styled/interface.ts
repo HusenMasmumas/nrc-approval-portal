@@ -11,3 +11,9 @@ export interface ButtonThemeTypes {
   border?: string;
   color?: string;
 }
+
+export interface StatusThemeTypes {
+  width?: string;
+  bg?: string;
+  border?: string;
+}
