@@ -8,7 +8,7 @@ import {
   StatusThemeTypes,
 } from "./interface";
 
-export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
+export const StyledInput = styled(Input) <{ thm?: InputThemeTypes }>`
   height: ${({ thm }) => thm?.height || "40px"};
   width: ${({ thm }) => thm?.width || "100%"};
   background-color: ${({ thm }) => thm?.backgroundColor || "white"};
@@ -22,13 +22,13 @@ export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
   }
 `;
 
-export const StyledInputPassword = styled(Input.Password)<{
+export const StyledInputPassword = styled(Input.Password) <{
   thm?: InputThemeTypes;
 }>`
   height: ${({ thm }) => thm?.height || "40px"};
 `;
 
-export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
+export const StyledButton = styled(Button) <{ thm?: ButtonThemeTypes }>`
   height: ${({ thm }) => thm?.height || "45px"};
   width: ${({ thm }) => thm?.width || "100%"};
   box-shadow: #e02020;
@@ -78,3 +78,4 @@ export const StyledStatus = styled.div<{ thm?: StatusThemeTypes }>`
   background-color: ${({ thm }) => thm?.bg || "#BC1B1C"};
   border: 1px solid ${({ thm }) => thm?.border || "#BC1B1C"};
 `;
+

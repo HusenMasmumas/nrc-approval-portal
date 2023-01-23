@@ -1,7 +1,7 @@
-import { Avatar } from "antd";
 import MoIcon from "components/icon/Icon";
 import MoImage from "components/image/Image";
 import {
+    StyledAvatar,
     StyledDivPaddingLeft,
     StyledSpanBorder,
 } from "components/styled/Styled";
@@ -40,7 +40,7 @@ const Table = () => {
             render: (name: string, data: any) => {
                 return (
                     <div className=" flex ">
-                        <Avatar size={40} icon={<MoImage src="" height={60} />} />
+                        <StyledAvatar size={40} icon={<MoImage src="" height={60} />} />
 
                         <div className=" flex flex-col pl-[10px]">
                             <div className="">{name}</div>

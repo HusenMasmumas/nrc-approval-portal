@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Select, Badge, Avatar } from "antd";
 import LogoHeader from "assets/img/LogoHeader.svg";
 import { BellOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { StyledInput } from "components/styled/Styled";
+import { StyledAvatar, StyledInput } from "components/styled/Styled";
 import MoImage from "components/image/Image";
 
 const HeaderLayout = () => {
@@ -62,7 +62,7 @@ const HeaderLayout = () => {
               </Badge>
             </div>
             <div>
-              <Avatar size={40} icon={<UserOutlined />} />
+              <StyledAvatar size={40} icon={<UserOutlined />} />
             </div>
           </div>
         </div>

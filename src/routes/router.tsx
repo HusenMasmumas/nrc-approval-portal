@@ -17,6 +17,7 @@ import MyWorkBroadcast from "views/broadcast_management/my_work";
 import CategoryManageStation from "views/manage_station_info/category";
 import ManageLevelStaff from "views/manage_departments/manage_level_staff";
 import StaffInfo from "views/manage_departments/staff_info";
+import PersonalInfo from "views/personal_info";
 
 export interface IRouter {
   path: string;
@@ -113,6 +114,11 @@ export const routers: RouteObject[] = [
       {
         path: "/manage-level-staff",
         element: <ManageLevelStaff />,
+        index: true,
+      },
+      {
+        path: "/personal-info",
+        element: <PersonalInfo />,
         index: true,
       },
     ],
