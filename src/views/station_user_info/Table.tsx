@@ -20,7 +20,7 @@ const Table = () => {
       station: "Xco Radio",
     },
     {
-      key: 1,
+      key: 2,
       name: "Narin",
       gmail: "narin@gmail.com",
       radio: "Smooth Radio",
@@ -28,7 +28,7 @@ const Table = () => {
       station: "Xco Radio",
     },
     {
-      key: 1,
+      key: 3,
       name: "Narin",
       gmail: "narin@gmail.com",
       radio: "Smooth Radio",
@@ -36,7 +36,7 @@ const Table = () => {
       station: "Xco Radio",
     },
     {
-      key: 1,
+      key: 4,
       name: "Narin",
       gmail: "narin@gmail.com",
       radio: "Smooth Radio",
@@ -44,7 +44,7 @@ const Table = () => {
       station: "Xco Radio",
     },
     {
-      key: 1,
+      key: 5,
       name: "Narin",
       gmail: "narin@gmail.com",
       radio: "Smooth Radio",
@@ -134,12 +134,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable
-        rowKey="no"
-        columns={columns}
-        dataSource={data}
-        paginationTable={true}
-      />
+      <MoTable columns={columns} dataSource={data} paginationTable={true} />
     </div>
   );
 };

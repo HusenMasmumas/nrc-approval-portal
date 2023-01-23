@@ -57,7 +57,7 @@ export const StyledDivBorder = styled.div`
 `;
 
 export const StyledSpanBorder = styled.span`
-  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px]`};
+  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px]  rounded-[5px]`};
 `;
 
 export const StyledDivPaddingLeft = styled.div`

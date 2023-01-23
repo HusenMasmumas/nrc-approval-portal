@@ -17,7 +17,7 @@ const ForgotPassword = () => {
       <div className=" flex h-screen justify-center  font-NotoSansThai ">
         <div className="m-auto">
           <div className="flex justify-center mb-[40px]">
-            <MoImage width={150} src={Logo} preview={false} />
+            <MoImage height={40} src={Logo} preview={false} />
           </div>
 
           <div className=" bg-white h-[440px] w-[400px] p-[40px]">

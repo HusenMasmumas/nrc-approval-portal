@@ -1,26 +1,38 @@
+import { ReactComponent as Dashboard } from "assets/icon/sidebar/dashboard.svg";
+import { ReactComponent as RadioStation } from "assets/icon/sidebar/radio-station.svg";
+import { ReactComponent as Broadcast } from "assets/icon/sidebar/broadcast.svg";
+import { ReactComponent as StationUserInfo } from "assets/icon/sidebar/station-user-info.svg";
+import { ReactComponent as AuthorizationRequestInfo } from "assets/icon/sidebar/authorization-request-info.svg";
+import { ReactComponent as BroadcastRequestInfo } from "assets/icon/sidebar/broadcast-request-info.svg";
+import { ReactComponent as ManagePackageInfo } from "assets/icon/sidebar/manage-package-info.svg";
+import { ReactComponent as PersonalInfo } from "assets/icon/sidebar/personal-info.svg";
+import { ReactComponent as ManageDepartments } from "assets/icon/sidebar/manage-departments.svg";
+import { ReactComponent as ManageHelpInfo } from "assets/icon/sidebar/manage-help-info.svg";
+import { ReactComponent as ManageStationInfo } from "assets/icon/sidebar/manage-station-info.svg";
+
 const navMenu = [
   {
     keyName: "dashboard",
     name: "dashboard",
-    icon: "",
+    icon: <Dashboard />,
     link: "/dashboard",
   },
   {
     keyName: "radio-station",
     name: "radioStation",
-    icon: "",
+    icon: <RadioStation />,
     link: "/radio-station",
   },
   {
     keyName: "broadcast",
     name: "broadcast",
-    icon: "",
+    icon: <Broadcast />,
     link: "/broadcast",
   },
   {
     keyName: "station-user-info",
     name: "stationUserInfo",
-    icon: "",
+    icon: <StationUserInfo />,
     link: "/station-user-info",
   },
 
@@ -33,7 +45,7 @@ const navMenu = [
       {
         keyName: "authorization-request-info",
         name: "authorizationRequestInfo",
-        icon: "",
+        icon: <AuthorizationRequestInfo />,
         link: "/authorization-request-info",
       },
       {
@@ -53,7 +65,7 @@ const navMenu = [
       {
         keyName: "broadcast-request-info",
         name: "broadcastRequestInfo",
-        icon: "",
+        icon: <BroadcastRequestInfo />,
         link: "/dashboard",
       },
       {
@@ -73,13 +85,13 @@ const navMenu = [
       {
         keyName: "manage-package-info",
         name: "managePackageInfo",
-        icon: "",
+        icon: <ManagePackageInfo />,
         link: "/dashboard",
       },
       {
         keyName: "manage-station-info",
         name: "manageStationInfo",
-        icon: "",
+        icon: <ManageStationInfo />,
         link: "/dashboard",
         children: [
           {
@@ -93,7 +105,7 @@ const navMenu = [
       {
         keyName: "manage-help-info",
         name: "manageHelpInfo",
-        icon: "",
+        icon: <ManageHelpInfo />,
         link: "",
         children: [
           {
@@ -113,7 +125,7 @@ const navMenu = [
       {
         keyName: "manage-departments",
         name: "manageDepartments",
-        icon: "",
+        icon: <ManageDepartments />,
         link: "/dashboard",
         children: [
           {
@@ -133,7 +145,7 @@ const navMenu = [
       {
         keyName: "personal-info",
         name: "personalInfo",
-        icon: "",
+        icon: <PersonalInfo />,
         link: "/dashboard",
       },
     ],

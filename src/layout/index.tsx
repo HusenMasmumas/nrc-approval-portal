@@ -11,7 +11,7 @@ type Props = {};
 export interface IMenu {
   keyName: string;
   name: string;
-  icon?: string;
+  icon?: any;
   link: string;
 }
 

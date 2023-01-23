@@ -8,7 +8,7 @@ import { DownOutlined, UpOutlined } from "@ant-design/icons";
 interface INavMenu {
   keyName: string;
   name: string;
-  icon: string;
+  icon: any;
   link: string;
   children?: INavMenu[];
 }
@@ -33,6 +33,11 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
     setManageMenu({
       ...manageMenu,
       selectedKeys: [path?.[1] || "", path?.[3] || ""],
+      openMenu: [
+        "manage-station-info",
+        "manage-help-info",
+        "manage-departments",
+      ],
     });
 
     // eslint-disable-next-line
@@ -94,22 +99,23 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                   <div className="mt-[20px] pl-[40px] mb-[7px] text-[11px] text-[#76767A]">
                     {t(item?.name)}
                   </div>
-                  {item?.children?.map((child, indexChild) => {
+                  {item?.children?.map((child: INavMenu, indexChild) => {
                     if (!!child?.children) {
                       return (
                         <div key={indexChild}>
                           <div
-                            className="flex items-center cursor-pointer h-[40px] hover:text-[#E02020]"
+                            className="flex items-center cursor-pointer h-[40px] hover:text-[#E02020] icon-menu-h"
                             onClick={() => setValueOpenMenu(child.keyName)}
                           >
                             <div
                               className={` pl-[40px] flex text-[15px]  items-center h-[40px]${
                                 !!activeMenu(child)
-                                  ? "bg-[#FFF5F5] text-[#E02020] "
-                                  : "hover:bg-[#FFF5F5]  "
+                                  ? "bg-[#FFF5F5] text-[#E02020] icon-menu"
+                                  : "hover:bg-[#FFF5F5] "
                               }`}
                             >
-                              {t(child?.name)}
+                              <div>{child?.icon}</div>
+                              <div className="ml-[6px]">{t(child?.name)}</div>
                             </div>
                             <div className="ml-auto pr-[20px] ">
                               <span className=" text-[13px] ">
@@ -140,7 +146,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                                       childChildren?.keyName,
                                     ]);
                                   }}
-                                  className={` hover:text-[#E02020] pl-[40px] flex text-[15px] cursor-pointer items-center h-[40px] circle`}
+                                  className={` hover:text-[#E02020] pl-[60px] flex text-[15px] cursor-pointer items-center h-[40px] circle `}
                                 >
                                   <div
                                     className={`${
@@ -150,7 +156,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                                     }`}
                                   ></div>
                                   <div
-                                    className={`text-[12px] ml-5 ${
+                                    className={`text-[12px] ml-[10px] ${
                                       !!activeMenu(childChildren)
                                         ? "text-[#E02020]"
                                         : ""
@@ -175,11 +181,12 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                           }}
                           className={`text-[#141414] pl-[40px] flex text-[15px] cursor-pointer items-center h-[40px] ${
                             !!activeMenu(child)
-                              ? "bg-[#FFF5F5] text-[#E02020] "
-                              : "hover:bg-[#FFF5F5] hover:text-[#E02020] "
+                              ? "bg-[#FFF5F5] text-[#E02020]  icon-menu "
+                              : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h"
                           }`}
                         >
-                          {t(child?.name)}
+                          <div>{child?.icon}</div>
+                          <div className="ml-[6px]">{t(child?.name)}</div>
                         </div>
                       </div>
                     );
@@ -191,13 +198,15 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                     gotoMenu(item);
                     setValueSelectedKeys([item.keyName]);
                   }}
-                  className={`text-[#141414] cursor-pointer flex text-[15px] pl-[40px] items-center h-[40px] ${
+                  className={` cursor-pointer flex text-[15px]  pl-[40px] items-center h-[40px] ${
                     !!activeMenu(item)
-                      ? "bg-[#FFF5F5] text-[#E02020] "
-                      : "hover:bg-[#FFF5F5] hover:text-[#E02020] "
+                      ? "bg-[#FFF5F5] text-[#E02020] icon-menu"
+                      : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h text-[#141414]"
                   } `}
                 >
-                  {t(item?.name)}
+                  <div>{item?.icon}</div>
+
+                  <div className="ml-[6px]">{t(item?.name)}</div>
                 </div>
               )}
             </div>
