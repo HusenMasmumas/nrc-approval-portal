@@ -95,10 +95,10 @@ const navMenu = [
         link: "/manage-station-info",
         children: [
           {
-            keyName: "manage-station-category",
+            keyName: "category-manage-station",
             name: "category",
             icon: "",
-            link: "/manage-station-category",
+            link: "/category-manage-station",
           },
         ],
       },

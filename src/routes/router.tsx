@@ -14,6 +14,7 @@ import StationUserInfo from "views/station_user_info";
 import ManageRequestMyWork from "views/manage_request_info/my_work";
 import BroadcastRequestInfo from "views/broadcast_management/broadcast_request_info";
 import MyWorkBroadcast from "views/broadcast_management/my_work";
+import CategoryManageStation from "views/manage_station_info/category";
 
 export interface IRouter {
   path: string;
@@ -95,6 +96,11 @@ export const routers: RouteObject[] = [
       {
         path: "/my-work-broadcast",
         element: <MyWorkBroadcast />,
+        index: true,
+      },
+      {
+        path: "/category-manage-station",
+        element: <CategoryManageStation />,
         index: true,
       },
     ],

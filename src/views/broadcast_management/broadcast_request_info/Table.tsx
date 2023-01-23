@@ -1,3 +1,4 @@
+import { ShareAltOutlined } from "@ant-design/icons";
 import { TableRowSelection } from "antd/es/table/interface";
 import MoIcon from "components/icon/Icon";
 import MoImage from "components/image/Image";
@@ -67,7 +68,14 @@ const Table = () => {
       dataIndex: "source",
       key: "source",
       render: (source: string) => {
-        return <div>{source}</div>;
+        return (
+          <div className="text-[#0064FF] flex text-center">
+            <div className="pr-[10px]">
+              <ShareAltOutlined />
+            </div>
+            <div>{source}</div>
+          </div>
+        );
       },
     },
 
