@@ -1,6 +1,7 @@
 import DefaultLayout from "layout";
 import { RouteObject } from "react-router-dom";
 import NotFoundPage from "views/404";
+import AuthorizationRequestInfo from "views/manage_request_info/authorization_request_info";
 import Broadcast from "views/broadcast";
 import Dashboard from "views/dashboard";
 import ForgotPassword from "views/forgot_password";
@@ -10,6 +11,7 @@ import HelpInfo from "views/manage_help_info/helpInfo";
 import Profile from "views/profile";
 import Station from "views/station";
 import StationUserInfo from "views/station_user_info";
+import ManageRequestMyWork from "views/manage_request_info/my_work";
 
 export interface IRouter {
   path: string;
@@ -70,6 +72,17 @@ export const routers: RouteObject[] = [
       {
         path: "/manage-help-category",
         element: <ManageHelpCategory />,
+        index: true,
+      },
+      {
+        path: "/authorization-request-info",
+        element: <AuthorizationRequestInfo />,
+        index: true,
+      },
+
+      {
+        path: "/manage-request-my-work",
+        element: <ManageRequestMyWork />,
         index: true,
       },
     ],

@@ -7,4 +7,7 @@ export interface InputThemeTypes {
 export interface ButtonThemeTypes {
   height: string;
   width?: string;
+  bg?: string;
+  border?: string;
+  color?: string;
 }

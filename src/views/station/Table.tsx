@@ -4,6 +4,7 @@ import MoTable from "components/table/Table";
 import React, { useState } from "react";
 import MoIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
+import MoImage from "components/image/Image";
 
 const Table = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -23,8 +24,6 @@ const Table = () => {
       title: "เลขที่",
       dataIndex: "no",
       key: "index",
-      //   align: "center",
-      //   width: "14%",
       render: (no: string) => {
         return <div>{no}</div>;
       },
@@ -36,9 +35,14 @@ const Table = () => {
       key: "name",
       render: (name: string, data: any) => {
         return (
-          <div>
-            <div>{data?.song}</div>
-            <div>{name}</div>
+          <div className=" flex items-center ">
+            <div>
+              <MoImage height={70} src="" />
+            </div>
+            <div className="flex flex-col pl-[10px]">
+              <div>{data?.song}</div>
+              <div>{name}</div>
+            </div>
           </div>
         );
       },

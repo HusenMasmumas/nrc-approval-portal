@@ -43,7 +43,7 @@ const StationUserInfo = () => {
             </div>
           </div>
 
-          <div>
+          <div className="rounded-[5px] border border-[#DEE2E7]">
             <Table />
           </div>
         </div>

@@ -1,3 +1,4 @@
+import MoImage from "components/image/Image";
 import StatusTable from "components/status/Status";
 import MoTable from "components/table/Table";
 import { dayjs } from "tools/timezone";
@@ -21,9 +22,14 @@ const Table = () => {
       key: "name",
       render: (name: string, data: any) => {
         return (
-          <div>
-            <div>{data?.song}</div>
-            <div>{name}</div>
+          <div className=" flex items-center ">
+            <div>
+              <MoImage height={70} src="" />
+            </div>
+            <div className="flex flex-col pl-[10px]">
+              <div>{data?.song}</div>
+              <div>{name}</div>
+            </div>
           </div>
         );
       },

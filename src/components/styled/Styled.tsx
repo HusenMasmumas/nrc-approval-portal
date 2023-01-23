@@ -28,16 +28,19 @@ export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
   height: ${({ thm }) => thm?.height || "45px"};
   width: ${({ thm }) => thm?.width || "100%"};
   box-shadow: #e02020;
-  border-color: #e02020;
-  ${tw`text-white bg-[#E02020] w-full`};
+  border-color: ${({ thm }) => thm?.border || "#e02020"};
+  width: ${({ thm }) => thm?.width || "100%"};
+  background-color: ${({ thm }) => thm?.bg || "#E02020"};
+  color: ${({ thm }) => thm?.color || "#ffffff"};
+  ${tw` w-full`};
   &.ant-btn {
     font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
   }
   &:hover,
   &:active,
   &:focus {
-    color: #ffffff !important;
-    border-color: #e02020 !important;
+    color: ${({ thm }) => thm?.color || "#ffffff"} !important;
+    border-color: ${({ thm }) => thm?.border || "#e02020"} !important;
     ${tw`text-white  w-full`};
   }
 `;

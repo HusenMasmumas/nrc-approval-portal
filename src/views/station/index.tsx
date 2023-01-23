@@ -52,7 +52,13 @@ const Station = () => {
             </div>
           </div>
 
-          <div className={`${!!open ? "open_list" : " hidden "}`}>
+          <div
+            className={`${
+              !!open
+                ? "open_list rounded-[5px] border border-[#DEE2E7]"
+                : " hidden "
+            }`}
+          >
             <Table />
           </div>
 

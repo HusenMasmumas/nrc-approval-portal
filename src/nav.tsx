@@ -49,10 +49,10 @@ const navMenu = [
         link: "/authorization-request-info",
       },
       {
-        keyName: "my-work1",
+        keyName: "manage-request-my-work",
         name: "myWork",
         icon: "",
-        link: "/dashboard",
+        link: "/manage-request-my-work",
       },
     ],
   },
