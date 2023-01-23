@@ -2,8 +2,10 @@ import MoTable from "components/table/Table";
 import MoIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
 import { dayjs } from "tools/timezone";
+import { useMainPagination } from "providers/pagination";
 
 const Table = () => {
+  const { page } = useMainPagination();
   const columns: any = [
     {
       title: "#",
@@ -12,7 +14,9 @@ const Table = () => {
       align: "center",
       width: "5%",
       render: (_: string, __: any, index: number) => {
-        return <div>{index + 1}</div>;
+        return (
+          <div>{page?.limitPage * (page?.currentPage - 1) + index + 1}</div>
+        );
       },
     },
 
@@ -74,36 +78,36 @@ const Table = () => {
       name: "เข้าระบบและการสมัครบัญชี",
       add: "Sukanya_admin",
       number: 1,
+      key: 1,
     },
     {
       name: "เข้าระบบและการสมัครบัญชี",
       add: "Sukanya_admin",
       number: 1,
+      key: 2,
     },
     {
       name: "เข้าระบบและการสมัครบัญชี",
       add: "Sukanya_admin",
       number: 1,
+      key: 3,
     },
     {
       name: "เข้าระบบและการสมัครบัญชี",
       add: "Sukanya_admin",
       number: 1,
+      key: 4,
     },
     {
       name: "เข้าระบบและการสมัครบัญชี",
       add: "Sukanya_admin",
       number: 1,
+      key: 5,
     },
   ];
   return (
     <div>
-      <MoTable
-        rowKey="no"
-        columns={columns}
-        dataSource={data}
-        paginationTable={true}
-      />
+      <MoTable columns={columns} dataSource={data} paginationTable={true} />
     </div>
   );
 };

@@ -25,7 +25,9 @@ const Navigation: FC<CHeaderContent> = ({ navigation, title }) => {
       <div className="text-[#525F7F]">
         {navigation?.map((item, i) => {
           return (
-            <span>{`${item} ${i + 1 !== navigation?.length ? "/" : ""} `}</span>
+            <span key={i}>{`${item} ${
+              i + 1 !== navigation?.length ? "/" : ""
+            } `}</span>
           );
         })}
       </div>

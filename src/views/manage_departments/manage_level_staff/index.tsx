@@ -8,10 +8,10 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Table from "./Table";
 
-const HelpInfo = () => {
+const ManageLevelStaff = () => {
   const { t } = useTranslation();
   const [page, setPage] = useState<IPagination>({
-    total: 90,
+    total: 5,
     currentPage: 1,
     limitPage: 10,
   });
@@ -19,12 +19,8 @@ const HelpInfo = () => {
     <MainPaginationProvider value={{ page: page, setPage: setPage }}>
       <div>
         <HeaderContent.Navigation
-          title={t("manageHelpInfo")}
-          navigation={[
-            "บริหารจัดการข้อมูล",
-            "จัดการข้อมูลช่วยเหลือ",
-            "ข้อมูลความช่วยเหลือ",
-          ]}
+          title={t("manageLevelStaff")}
+          navigation={["จัดการหน่วยงาน", "จัดการระดับเจ้าหน้าที่"]}
         />
         <div className=" mt-[20px]">
           <div className=" flex mb-[20px] items-center">
@@ -44,12 +40,12 @@ const HelpInfo = () => {
                 className=" flex justify-center items-center"
               >
                 <MoIcon keyData="plus" />
-                <div className="ml-[10px]">เพิ่มข้อมูล</div>
+                <div className="ml-[10px]">เพิ่มระดับเจ้าหน้าที่</div>
               </StyledButton>
             </div>
           </div>
 
-          <div className="rounded-[5px] border border-[#DEE2E7]">
+          <div className="rounded-[5px] border border-[#DEE2E7] ">
             <Table />
           </div>
         </div>
@@ -58,4 +54,4 @@ const HelpInfo = () => {
   );
 };
 
-export default HelpInfo;
+export default ManageLevelStaff;

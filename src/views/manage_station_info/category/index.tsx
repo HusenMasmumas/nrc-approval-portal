@@ -45,7 +45,7 @@ const CategoryManageStation = () => {
             </div>
           </div>
 
-          <div className="rounded-[5px] border border-[#DEE2E7] mt-[30px]">
+          <div className="rounded-[5px] border border-[#DEE2E7]">
             <Table />
           </div>
         </div>

@@ -112,7 +112,11 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable columns={columns} dataSource={data} paginationTable={true} />
+      <MoTable
+        columns={columns}
+        dataSource={data}
+        paginationTable={true}
+      />
     </div>
   );
 };
