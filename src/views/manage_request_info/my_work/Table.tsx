@@ -1,6 +1,6 @@
 import { TableRowSelection } from "antd/es/table/interface";
 import MoIcon from "components/icon/Icon";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import StatusTable from "components/status/Status";
 import { StyledButton, StyledDivPaddingLeft } from "components/styled/Styled";
 import CTable from "components/table/Table";
@@ -38,7 +38,7 @@ const Table = () => {
         return (
           <div className=" flex items-center ">
             <div>
-              <MoImage height={70} src="" />
+              <CImage height={70} src="" />
             </div>
             <div className="flex flex-col pl-[10px]">
               <div>{data?.song}</div>

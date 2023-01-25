@@ -5,11 +5,7 @@ type Props = {
 };
 
 const ContentLayout: FC<Props> = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default ContentLayout;

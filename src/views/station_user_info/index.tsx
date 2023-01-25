@@ -6,7 +6,7 @@ import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import ModalAddUserStation from "./Modal";
+import FormAddUserStation from "./form";
 import Table from "./Table";
 
 const StationUserInfo = () => {
@@ -55,7 +55,7 @@ const StationUserInfo = () => {
           </div>
         </div>
         {isModalOpen && (
-          <ModalAddUserStation isModalOpen={isModalOpen} onClick={onClick} />
+          <FormAddUserStation isModalOpen={isModalOpen} onClick={onClick} />
         )}
       </div>
     </MainPaginationProvider>

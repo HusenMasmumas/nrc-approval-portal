@@ -1,6 +1,6 @@
 import { Form, Upload } from "antd";
 import { useForm } from "antd/es/form/Form";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import {
   StyledButton,
   StyledInputNoBorder,
@@ -62,7 +62,7 @@ const Personal = () => {
               const image = form.getFieldValue("avatar");
 
               return (
-                <MoImage
+                <CImage
                   className="rounded-full drop-shadow-profile border-[4px] border-[#F6F9FC]"
                   src={image || ""}
                   height={100}

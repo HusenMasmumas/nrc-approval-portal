@@ -6,7 +6,7 @@ import Between from "assets/icon/dashboard/between.svg";
 import Approve from "assets/icon/dashboard/approve.svg";
 import Disapproved from "assets/icon/dashboard/disapproved.svg";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { StyledLine } from "components/styled/Styled";
 
 const UpdateRequest = () => {
@@ -58,7 +58,7 @@ const UpdateRequest = () => {
           <Fragment key={i}>
             <div className="flex items-center text-[#6C757D]">
               <div className=" mr-[10px]">
-                <MoImage src={item?.icon} preview={false} width={25} />
+                <CImage src={item?.icon} preview={false} width={25} />
               </div>
               <div>{item?.name}</div>
               <div className="ml-[auto]">30</div>

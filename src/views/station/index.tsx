@@ -7,7 +7,7 @@ import UnorderedListOutlined from "assets/icon/unordered_list_outlined.svg";
 import AppStoreOutlined from "assets/icon/appstore_outlined.svg";
 import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { useTranslation } from "react-i18next";
 import HeaderContent from "components/header_content/HeaderContent";
 
@@ -42,11 +42,11 @@ const Station = () => {
             <div className="ml-auto">
               {!!open ? (
                 <div className=" cursor-pointer" onClick={setValueOpen}>
-                  <MoImage src={AppStoreOutlined} preview={false} />{" "}
+                  <CImage src={AppStoreOutlined} preview={false} />{" "}
                 </div>
               ) : (
                 <div className=" cursor-pointer" onClick={setValueOpen}>
-                  <MoImage src={UnorderedListOutlined} preview={false} />
+                  <CImage src={UnorderedListOutlined} preview={false} />
                 </div>
               )}
             </div>

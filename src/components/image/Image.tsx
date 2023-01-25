@@ -2,7 +2,7 @@ import { Image, ImageProps } from "antd";
 import { FC } from "react";
 import NoImage from "assets/img/no_image.jpg";
 interface Props extends ImageProps {}
-const MoImage: FC<Props> = ({ height, className, ...props }) => {
+const CImage: FC<Props> = ({ height, className, ...props }) => {
   return (
     <Image
       {...props}
@@ -14,4 +14,4 @@ const MoImage: FC<Props> = ({ height, className, ...props }) => {
   );
 };
 
-export default MoImage;
+export default CImage;

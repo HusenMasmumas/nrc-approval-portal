@@ -3,7 +3,7 @@ import { Badge } from "antd";
 import LogoHeader from "assets/img/LogoHeader.svg";
 import { BellOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { StyledAvatarNone, StyledInput } from "components/styled/Styled";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import CSelect from "components/select/Selector";
 
 const HeaderLayout = () => {
@@ -24,7 +24,7 @@ const HeaderLayout = () => {
     >
       <div className="flex flex-[row wrap] items-center ">
         {/* <div style={{ position: "relative", maxWidth: "100%" }}> */}
-        <MoImage src={LogoHeader} preview={false} height={35} />
+        <CImage src={LogoHeader} preview={false} height={35} />
         {/* </div> */}
         <div className=" ml-auto">
           <div className="flex-[row wrap] flex items-center ">

@@ -1,6 +1,6 @@
 import CTable from "components/table/Table";
 import Radio from "assets/icon/station-user-info/radio.svg";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import {
   StyledAvatarNone,
   StyledDivPaddingLeft,
@@ -61,7 +61,7 @@ const Table = () => {
       render: (no: string) => {
         return (
           <div>
-            <MoImage src={Radio} height={25} />
+            <CImage src={Radio} height={25} />
           </div>
         );
       },
@@ -77,7 +77,7 @@ const Table = () => {
             <div className="pr-[10px]">
               <StyledAvatarNone
                 size={40}
-                icon={<MoImage src="" height={40} />}
+                icon={<CImage src="" height={40} />}
               />
             </div>
             <div className=" flex flex-col">

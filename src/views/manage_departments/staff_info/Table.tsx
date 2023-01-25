@@ -1,5 +1,5 @@
 import MoIcon from "components/icon/Icon";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import {
   StyledAvatarNone,
   StyledDivPaddingLeft,
@@ -40,7 +40,7 @@ const Table = () => {
       render: (name: string, data: any) => {
         return (
           <div className=" flex ">
-            <StyledAvatarNone size={40} icon={<MoImage src="" height={60} />} />
+            <StyledAvatarNone size={40} icon={<CImage src="" height={60} />} />
 
             <div className=" flex flex-col pl-[10px]">
               <div className="">{name}</div>

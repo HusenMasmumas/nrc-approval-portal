@@ -1,5 +1,5 @@
 import CTable from "components/table/Table";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
 import { dayjs } from "tools/timezone";
 import MoIcon from "components/icon/Icon";
@@ -59,7 +59,7 @@ const Table = () => {
       render: (name: string, data: any) => {
         return (
           <div className=" flex items-center">
-            <MoImage src="" height={60} />
+            <CImage src="" height={60} />
 
             <div className="pl-[10px]">{name}</div>
           </div>

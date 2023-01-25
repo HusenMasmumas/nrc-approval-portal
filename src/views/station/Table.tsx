@@ -1,10 +1,10 @@
-import { Select } from "antd";
+import { Popover, Select } from "antd";
 import { TableRowSelection } from "antd/es/table/interface";
 import CTable from "components/table/Table";
 import React, { useState } from "react";
 import MoIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 
 const Table = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -37,7 +37,7 @@ const Table = () => {
         return (
           <div className=" flex items-center ">
             <div>
-              <MoImage height={70} src="" />
+              <CImage height={70} src="" />
             </div>
             <div className="flex flex-col pl-[10px]">
               <div>{data?.song}</div>
@@ -139,9 +139,21 @@ const Table = () => {
             <StyledDivPaddingLeft>
               <MoIcon keyData="clock" onClick={onClock} />
             </StyledDivPaddingLeft>
-            <StyledDivPaddingLeft>
-              <MoIcon keyData="menu" onClick={onClock} />
-            </StyledDivPaddingLeft>
+
+            <Popover
+              autoAdjustOverflow={false}
+              content={
+                <div>
+                  <div>ดูรายการ </div>
+                  <div>แก้ไข</div>
+                  <div>แชร์</div>
+                </div>
+              }
+            >
+              <StyledDivPaddingLeft>
+                <MoIcon keyData="menu" onClick={onClock} />
+              </StyledDivPaddingLeft>
+            </Popover>
           </div>
         );
       },
@@ -210,6 +222,7 @@ const Table = () => {
       listeningCount: "3,000",
     },
   ];
+
   return (
     <div>
       <CTable

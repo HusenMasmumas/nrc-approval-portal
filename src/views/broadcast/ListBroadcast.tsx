@@ -1,6 +1,6 @@
 import Radio from "assets/img/dashboard/radio.jpg";
 import StatusTable from "components/status/Status";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { dayjs } from "tools/timezone";
 import Heart from "assets/icon/heart.svg";
 import Play from "assets/icon/play.svg";
@@ -41,7 +41,7 @@ const ListBroadcast = () => {
           <div key={i}>
             <div className=" h-[141.21px] flex ">
               <div className=" pr-[10px] font-NotoSansThaiBold">
-                <MoImage src={Radio} width={124} height={121.82} />
+                <CImage src={Radio} width={124} height={121.82} />
               </div>
               <div className=" flex flex-col w-full">
                 <div className="flex  items-center">
@@ -80,7 +80,7 @@ const ListBroadcast = () => {
                       return (
                         <div className="flex" key={i}>
                           <div className="mr-[5px] ">
-                            <MoImage src={item?.icon} height={15} />
+                            <CImage src={item?.icon} height={15} />
                           </div>
                           <div>{item?.value}</div>
                         </div>

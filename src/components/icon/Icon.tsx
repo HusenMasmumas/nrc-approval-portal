@@ -1,4 +1,4 @@
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { FC } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -47,12 +47,12 @@ const MoIcon: FC<Props> = ({
   if (!!onClick)
     return (
       <StyledDivCursor className={classDiv?.className} onClick={onClick}>
-        <MoImage {...props} src={icon?.[keyData]?.img} preview={false} />
+        <CImage {...props} src={icon?.[keyData]?.img} preview={false} />
       </StyledDivCursor>
     );
   return (
     <StyledDiv className={classDiv?.className} onClick={onClick}>
-      <MoImage {...props} src={icon?.[keyData]?.img} preview={false} />
+      <CImage {...props} src={icon?.[keyData]?.img} preview={false} />
     </StyledDiv>
   );
 };

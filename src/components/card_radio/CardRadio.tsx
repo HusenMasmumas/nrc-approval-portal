@@ -1,6 +1,6 @@
 import { HeartOutlined } from "@ant-design/icons";
 import { FC } from "react";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 
 type Props = {
   image: string;
@@ -9,7 +9,7 @@ type Props = {
 const CardRadio: FC<Props> = ({ image }) => {
   return (
     <div className="bg-white h-[232px] w-[289] drop-shadow-sm rounded-[5px]">
-      <MoImage
+      <CImage
         className="object-cover"
         src={image}
         preview={false}

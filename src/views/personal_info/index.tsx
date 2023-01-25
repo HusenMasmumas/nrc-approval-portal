@@ -1,4 +1,4 @@
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import { StyledLine } from "components/styled/Styled";
 import { Fragment, useState } from "react";
 import styled from "styled-components";
@@ -56,7 +56,7 @@ const PersonalInfo = () => {
     <div>
       <div className="bg-white w-full h-[158px] border border-[#E6E9ED] flex py-[17px] px-[13px] rounded-[5px]">
         <div>
-          <MoImage
+          <CImage
             className="rounded-full drop-shadow-profile border-[3px] border-[#F6F9FC]"
             src={""}
             height={100}
