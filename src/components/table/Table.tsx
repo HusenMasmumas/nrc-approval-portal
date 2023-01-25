@@ -34,8 +34,10 @@ const MoTable: FC<Props> = ({
       <StyledTable
         dataSource={props?.dataSource}
         columns={props.columns}
-        pagination={false}
+        scroll={{ x: "calc(100vw -20%)" }}
         {...props}
+        pagination={false}
+
       />
       {!!paginationTable ? (
         <div className=" bg-white flex p-[15px] justify-end ">

@@ -2,7 +2,7 @@ import MoTable from "components/table/Table";
 import Radio from "assets/icon/station-user-info/radio.svg";
 import MoImage from "components/image/Image";
 import {
-  StyledAvatar,
+  StyledAvatarNone,
   StyledDivPaddingLeft,
   StyledSpanBorder,
 } from "components/styled/Styled";
@@ -75,7 +75,10 @@ const Table = () => {
         return (
           <div className=" flex items-center">
             <div className="pr-[10px]">
-              <StyledAvatar size={40} icon={<MoImage src="" height={40} />} />
+              <StyledAvatarNone
+                size={40}
+                icon={<MoImage src="" height={40} />}
+              />
             </div>
             <div className=" flex flex-col">
               <div>{name}</div>

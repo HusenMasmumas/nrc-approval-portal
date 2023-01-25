@@ -14,25 +14,25 @@ const navMenu = [
   {
     keyName: "dashboard",
     name: "dashboard",
-    icon: <Dashboard />,
+    icon: <Dashboard height={20} />,
     link: "/dashboard",
   },
   {
     keyName: "radio-station",
     name: "radioStation",
-    icon: <RadioStation />,
+    icon: <RadioStation height={20} />,
     link: "/radio-station",
   },
   {
     keyName: "broadcast",
     name: "broadcast",
-    icon: <Broadcast />,
+    icon: <Broadcast height={20} />,
     link: "/broadcast",
   },
   {
     keyName: "station-user-info",
     name: "stationUserInfo",
-    icon: <StationUserInfo />,
+    icon: <StationUserInfo height={20} />,
     link: "/station-user-info",
   },
 
@@ -45,7 +45,7 @@ const navMenu = [
       {
         keyName: "authorization-request-info",
         name: "authorizationRequestInfo",
-        icon: <AuthorizationRequestInfo />,
+        icon: <AuthorizationRequestInfo height={20} />,
         link: "/authorization-request-info",
       },
       {
@@ -65,7 +65,7 @@ const navMenu = [
       {
         keyName: "broadcast-request-info",
         name: "broadcastRequestInfo",
-        icon: <BroadcastRequestInfo />,
+        icon: <BroadcastRequestInfo height={20} />,
         link: "/broadcast-request-info",
       },
       {
@@ -85,13 +85,13 @@ const navMenu = [
       {
         keyName: "manage-package-info",
         name: "managePackageInfo",
-        icon: <ManagePackageInfo />,
+        icon: <ManagePackageInfo height={20} />,
         link: "/manage-package-info",
       },
       {
         keyName: "manage-station-info",
         name: "manageStationInfo",
-        icon: <ManageStationInfo />,
+        icon: <ManageStationInfo height={20} />,
         link: "/manage-station-info",
         children: [
           {
@@ -105,7 +105,7 @@ const navMenu = [
       {
         keyName: "manage-help-info",
         name: "manageHelpInfo",
-        icon: <ManageHelpInfo />,
+        icon: <ManageHelpInfo height={20} />,
         link: "",
         children: [
           {
@@ -125,7 +125,7 @@ const navMenu = [
       {
         keyName: "manage-departments",
         name: "manageDepartments",
-        icon: <ManageDepartments />,
+        icon: <ManageDepartments height={20} />,
         link: "/dashboard",
         children: [
           {
@@ -145,7 +145,7 @@ const navMenu = [
       {
         keyName: "personal-info",
         name: "personalInfo",
-        icon: <PersonalInfo />,
+        icon: <PersonalInfo height={20} />,
         link: "/personal-info",
       },
     ],

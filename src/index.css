@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 /* * {
-  font-family: 'NotoSansThai';
+  font-size: calc(50% + 0.8vmin);
 
 } */
 

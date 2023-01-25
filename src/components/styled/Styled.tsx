@@ -8,7 +8,7 @@ import {
   StatusThemeTypes,
 } from "./interface";
 
-export const StyledInput = styled(Input) <{ thm?: InputThemeTypes }>`
+export const StyledInput = styled(Input)<{ thm?: InputThemeTypes }>`
   height: ${({ thm }) => thm?.height || "40px"};
   width: ${({ thm }) => thm?.width || "100%"};
   background-color: ${({ thm }) => thm?.backgroundColor || "white"};
@@ -22,21 +22,48 @@ export const StyledInput = styled(Input) <{ thm?: InputThemeTypes }>`
   }
 `;
 
-export const StyledInputPassword = styled(Input.Password) <{
+export const StyledInputNoBorder = styled(Input)<{ thm?: InputThemeTypes }>`
+  height: ${({ thm }) => thm?.height || "40px"};
+  width: ${({ thm }) => thm?.width || "100%"};
+  background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+
+  &.ant-input {
+    background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
+    border: unset !important;
+    color: ${({ thm }) => thm?.color || "#525F7F"} !important;
+  }
+  &.ant-input:focus,
+  .ant-input:focus-visited,
+  .ant-input:active {
+    box-shadow: unset !important;
+    border: unset !important;
+  }
+`;
+
+export const StyledInputPassword = styled(Input.Password)<{
   thm?: InputThemeTypes;
 }>`
   height: ${({ thm }) => thm?.height || "40px"};
+  width: ${({ thm }) => thm?.width || "100%"};
+  background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+  .ant-input {
+    background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
+  }
+  &.ant-input {
+    background-color: ${({ thm }) => thm?.backgroundColor || "white"};
+    font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
+  }
 `;
 
-export const StyledButton = styled(Button) <{ thm?: ButtonThemeTypes }>`
+export const StyledButton = styled(Button)<{ thm?: ButtonThemeTypes }>`
   height: ${({ thm }) => thm?.height || "45px"};
   width: ${({ thm }) => thm?.width || "100%"};
   box-shadow: #e02020;
   border-color: ${({ thm }) => thm?.border || "#e02020"};
-  width: ${({ thm }) => thm?.width || "100%"};
   background-color: ${({ thm }) => thm?.bg || "#E02020"};
   color: ${({ thm }) => thm?.color || "#ffffff"};
-  ${tw` w-full`};
   &.ant-btn {
     font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium";
   }
@@ -45,7 +72,7 @@ export const StyledButton = styled(Button) <{ thm?: ButtonThemeTypes }>`
   &:focus {
     color: ${({ thm }) => thm?.color || "#ffffff"} !important;
     border-color: ${({ thm }) => thm?.border || "#e02020"} !important;
-    ${tw`text-white  w-full`};
+    ${tw`text-white `};
   }
 `;
 
@@ -53,9 +80,14 @@ export const StyledHeader = styled(Header)`
   height: 64px;
 `;
 
+export const StyledAvatarNone = styled(Avatar)`
+  &.ant-avatar {
+    ${tw`border-0 `}
+  }
+`;
 export const StyledAvatar = styled(Avatar)`
   &.ant-avatar {
-    ${tw`border-0`}
+    ${tw`border-4  border-[#F0F2F5] drop-shadow-2xl`}
   }
 `;
 
@@ -79,3 +111,6 @@ export const StyledStatus = styled.div<{ thm?: StatusThemeTypes }>`
   border: 1px solid ${({ thm }) => thm?.border || "#BC1B1C"};
 `;
 
+export const StyledLine = styled.div`
+  ${tw`border-b-[1px] border-[#D9DEE4]`};
+`;
