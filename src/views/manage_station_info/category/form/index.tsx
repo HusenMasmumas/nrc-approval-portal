@@ -67,7 +67,7 @@ const FormAddStationInfoCategory: FC<Props> = ({
 
                 <div>
                   <Form.Item
-                    name="email"
+                    name="description"
                     rules={[
                       {
                         required: true,
@@ -75,10 +75,8 @@ const FormAddStationInfoCategory: FC<Props> = ({
                     ]}
                   >
                     <TextArea
-                      showCount
                       maxLength={100}
                       style={{ height: 120, marginBottom: 24 }}
-                      placeholder="can resize"
                     />
                   </Form.Item>
                 </div>
