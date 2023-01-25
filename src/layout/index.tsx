@@ -44,7 +44,7 @@ const DefaultLayout = (props: Props) => {
           <div className="flex flex-col bg-[#F6F9FC] text-[15px] ">
             <div
               ref={sc}
-              className="w-[calc(100vw-260px)]   h-[calc(100vh-70px)] overflow-y-auto"
+              className="w-[calc(100vw-39.1vmin)]   h-[calc(100vh-9.9vmin)] overflow-y-auto"
             >
               <div className="p-[30px]  ">
                 <ContentLayout />

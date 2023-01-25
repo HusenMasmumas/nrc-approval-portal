@@ -84,11 +84,11 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
   return (
     <div
       style={{
-        flex: "0 0 260px",
+        flex: "0 0 39.1vmin",
         position: "relative",
         borderRight: "2px solid #bebebe5e",
       }}
-      className=" w-[260px] overflow-y-auto  bg-white  h-[calc(100vh-70px)]"
+      className=" w-[39.1vmin] overflow-y-auto  bg-white  h-[calc(100vh-70px)]"
     >
       <div>
         {navMenu?.map((item, index) => {
@@ -108,7 +108,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                             onClick={() => setValueOpenMenu(child.keyName)}
                           >
                             <div
-                              className={` pl-[40px] flex text-[15px]  items-center h-[40px]${
+                              className={` pl-[40px] flex text-[13px]  items-center h-[40px]${
                                 !!activeMenu(child)
                                   ? "bg-[#FFF5F5] text-[#E02020] icon-menu"
                                   : "hover:bg-[#FFF5F5] "
@@ -179,7 +179,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                             gotoMenu(child);
                             setValueSelectedKeys([child?.keyName]);
                           }}
-                          className={`text-[#141414] pl-[40px] flex text-[15px] cursor-pointer items-center h-[40px] ${
+                          className={`text-[#141414] pl-[40px] flex text-[13px] cursor-pointer items-center h-[40px] ${
                             !!activeMenu(child)
                               ? "bg-[#FFF5F5] text-[#E02020]  icon-menu "
                               : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h"
@@ -198,7 +198,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                     gotoMenu(item);
                     setValueSelectedKeys([item.keyName]);
                   }}
-                  className={` cursor-pointer flex text-[15px]  pl-[40px] items-center h-[40px] ${
+                  className={` cursor-pointer flex text-[13px]  pl-[40px] items-center h-[40px]  ${
                     !!activeMenu(item)
                       ? "bg-[#FFF5F5] text-[#E02020] icon-menu"
                       : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h text-[#141414]"
@@ -206,7 +206,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                 >
                   <div>{item?.icon}</div>
 
-                  <div className="ml-[6px]">{t(item?.name)}</div>
+                  <div className="ml-[10px]">{t(item?.name)}</div>
                 </div>
               )}
             </div>
