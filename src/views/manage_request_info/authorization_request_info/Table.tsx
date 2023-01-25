@@ -1,13 +1,16 @@
 import { TableRowSelection } from "antd/es/table/interface";
 import MoIcon from "components/icon/Icon";
-import MoImage from "components/image/Image";
+import CImage from "components/image/Image";
 import StatusTable from "components/status/Status";
 import { StyledButton, StyledDivPaddingLeft } from "components/styled/Styled";
 import CTable from "components/table/Table";
+import MainAuthorizationRequestInfoProvider from "providers/authorization_request_info";
 import React, { useState } from "react";
 import { dayjs } from "tools/timezone";
+import ModalCoordinate from "./Modal";
 
 const Table = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
@@ -19,6 +22,9 @@ const Table = () => {
 
   const onView = () => {};
   const onClock = () => {};
+  const onClick = (e: boolean) => {
+    setIsModalOpen(e);
+  };
 
   const columns: any = [
     {
@@ -38,7 +44,7 @@ const Table = () => {
         return (
           <div className=" flex items-center ">
             <div>
-              <MoImage height={70} src="" />
+              <CImage height={70} src="" />
             </div>
             <div className="flex flex-col pl-[10px]">
               <div>{data?.song}</div>
@@ -102,6 +108,11 @@ const Table = () => {
             <div className="ml-[10px]">
               {status === 1 ? (
                 <StyledButton
+                  onClick={(e) => {
+                    onClick(!isModalOpen);
+
+                    e.stopPropagation();
+                  }}
                   thm={{
                     height: "35px",
                   }}
@@ -174,15 +185,24 @@ const Table = () => {
     },
   ];
   return (
-    <div>
-      <CTable
-        rowKey="no"
-        columns={columns}
-        dataSource={data}
-        rowSelection={{ ...rowSelection, checkStrictly: false }}
-        paginationTable={true}
-      />
-    </div>
+    <MainAuthorizationRequestInfoProvider
+      value={{
+        isModalOpen: isModalOpen,
+        setIsModalOpen: setIsModalOpen,
+        onClick: onClick,
+      }}
+    >
+      <div>
+        <CTable
+          rowKey="no"
+          columns={columns}
+          dataSource={data}
+          rowSelection={{ ...rowSelection, checkStrictly: false }}
+          paginationTable={true}
+        />
+        {!!isModalOpen && <ModalCoordinate />}
+      </div>
+    </MainAuthorizationRequestInfoProvider>
   );
 };
 
