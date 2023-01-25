@@ -8,7 +8,7 @@ import {
   StyledDivPaddingLeft,
   StyledStatus,
 } from "components/styled/Styled";
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import React, { useState } from "react";
 import { dayjs } from "tools/timezone";
 
@@ -211,7 +211,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable
+      <CTable
         rowKey="no"
         columns={columns}
         dataSource={data}

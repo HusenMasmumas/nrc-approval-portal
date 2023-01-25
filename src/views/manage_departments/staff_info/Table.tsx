@@ -5,7 +5,7 @@ import {
   StyledDivPaddingLeft,
   StyledSpanBorder,
 } from "components/styled/Styled";
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import { dayjs } from "tools/timezone";
 
 const Table = () => {
@@ -89,7 +89,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable columns={columns} dataSource={data} paginationTable={true} />
+      <CTable columns={columns} dataSource={data} paginationTable={true} />
     </div>
   );
 };

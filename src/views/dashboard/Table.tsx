@@ -1,6 +1,6 @@
 import MoImage from "components/image/Image";
 import StatusTable from "components/status/Status";
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import { dayjs } from "tools/timezone";
 
 const Table = () => {
@@ -108,7 +108,7 @@ const Table = () => {
 
   return (
     <div>
-      <MoTable rowKey="no" columns={columns} dataSource={data} />
+      <CTable rowKey="no" columns={columns} dataSource={data} />
     </div>
   );
 };

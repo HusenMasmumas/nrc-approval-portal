@@ -88,7 +88,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
         position: "relative",
         borderRight: "2px solid #bebebe5e",
       }}
-      className=" w-[39.1vmin] overflow-y-auto  bg-white  h-[calc(100vh-70px)]"
+      className=" w-[39.1vmin] overflow-y-auto  bg-white  h-[calc(100vh-9.9vmin)]"
     >
       <div>
         {navMenu?.map((item, index) => {

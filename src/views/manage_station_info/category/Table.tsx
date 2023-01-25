@@ -1,4 +1,4 @@
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import MoImage from "components/image/Image";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
 import { dayjs } from "tools/timezone";
@@ -112,11 +112,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable
-        columns={columns}
-        dataSource={data}
-        paginationTable={true}
-      />
+      <CTable columns={columns} dataSource={data} paginationTable={true} />
     </div>
   );
 };

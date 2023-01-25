@@ -1,6 +1,6 @@
 import { Select } from "antd";
 import { TableRowSelection } from "antd/es/table/interface";
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import React, { useState } from "react";
 import MoIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
@@ -212,7 +212,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable
+      <CTable
         rowKey="no"
         columns={columns}
         dataSource={data}

@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { Select, Badge } from "antd";
+import { Badge } from "antd";
 import LogoHeader from "assets/img/LogoHeader.svg";
 import { BellOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 import { StyledAvatarNone, StyledInput } from "components/styled/Styled";
 import MoImage from "components/image/Image";
+import CSelect from "components/select/Selector";
 
 const HeaderLayout = () => {
   const { i18n } = useTranslation();
@@ -39,12 +40,8 @@ const HeaderLayout = () => {
             />
 
             <div className="pr-[20px] pl-[20px] ">
-              <Select
-                className=""
-                value={i18n.language === "th" ? "th" : "en"}
-                showSearch
-                onChange={changeLanguage}
-                options={[
+              <CSelect
+                Source={[
                   {
                     value: "th",
                     label: "TH",
@@ -54,6 +51,10 @@ const HeaderLayout = () => {
                     label: "EN",
                   },
                 ]}
+                value={i18n.language === "th" ? "th" : "en"}
+                onChange={changeLanguage}
+                keyName="label"
+                keyValue="value"
               />
             </div>
             <div className="pr-[20px] ">

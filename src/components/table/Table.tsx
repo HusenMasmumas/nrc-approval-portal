@@ -24,7 +24,7 @@ interface Props extends TableProps<any> {
   paginationTable?: boolean;
 }
 
-const MoTable: FC<Props> = ({
+const CTable: FC<Props> = ({
   paginationTable = true,
   classNamePagination,
   ...props
@@ -34,10 +34,9 @@ const MoTable: FC<Props> = ({
       <StyledTable
         dataSource={props?.dataSource}
         columns={props.columns}
-        scroll={{ x: "calc(100vw -20%)" }}
+        scroll={{ x: "calc(100vw-5%)" }}
         {...props}
         pagination={false}
-
       />
       {!!paginationTable ? (
         <div className=" bg-white flex p-[15px] justify-end ">
@@ -48,4 +47,4 @@ const MoTable: FC<Props> = ({
   );
 };
 
-export default MoTable;
+export default CTable;

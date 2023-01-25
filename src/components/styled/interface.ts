@@ -18,3 +18,7 @@ export interface StatusThemeTypes {
   bg?: string;
   border?: string;
 }
+
+export interface SelectThemeTypes {
+  height?: string;
+}

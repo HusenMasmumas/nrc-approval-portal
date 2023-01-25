@@ -7,6 +7,7 @@ import Approve from "assets/icon/dashboard/approve.svg";
 import Disapproved from "assets/icon/dashboard/disapproved.svg";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import MoImage from "components/image/Image";
+import { StyledLine } from "components/styled/Styled";
 
 const UpdateRequest = () => {
   const request = [
@@ -63,7 +64,7 @@ const UpdateRequest = () => {
               <div className="ml-[auto]">30</div>
             </div>
 
-            <div className="border-b-[1px] border-[#D9DEE4] mt-[20px] mb-[20px]" />
+            <StyledLine className="mt-[20px] mb-[20px]" />
           </Fragment>
         );
       })}

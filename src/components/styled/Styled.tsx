@@ -1,10 +1,11 @@
-import { Input, Button, Avatar } from "antd";
+import { Input, Button, Avatar, Modal, Select } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styled from "styled-components";
 import tw from "twin.macro";
 import {
   ButtonThemeTypes,
   InputThemeTypes,
+  SelectThemeTypes,
   StatusThemeTypes,
 } from "./interface";
 
@@ -113,4 +114,53 @@ export const StyledStatus = styled.div<{ thm?: StatusThemeTypes }>`
 
 export const StyledLine = styled.div`
   ${tw`border-b-[1px] border-[#D9DEE4]`};
+`;
+
+export const StyledModal = styled(Modal)`
+  &.ant-modal .ant-modal-content {
+    padding: unset !important;
+  }
+  .ant-modal-header {
+    margin-bottom: 0px !important;
+  }
+  .ant-modal-close {
+    top: 28px !important;
+    color: #000000;
+  }
+  &.manage-modal .ant-modal-body {
+    height: calc(100% - 70px);
+    padding: 0px;
+  }
+
+  &.manage-modal .scroll {
+    height: 40vh;
+    overflow-y: auto;
+    overflow-x: clip;
+  }
+
+  &.manage-modal .footer {
+    height: 85px;
+    position: relative;
+  }
+`;
+
+export const StyledSelect = styled(Select)<{
+  thm?: SelectThemeTypes;
+}>`
+  .ant-select-selector {
+    height: ${({ thm }) => thm?.height || "40px"} !important;
+  }
+
+  &.ant-select-single .ant-select-selector .ant-select-selection-item {
+    line-height: ${({ thm }) => thm?.height || "40px"};
+  }
+
+  .ant-select-selection-search {
+    display: flex !important;
+    align-items: center !important;
+  }
+  .ant-select-selection-placeholder {
+    display: flex !important;
+    align-items: center !important;
+  }
 `;

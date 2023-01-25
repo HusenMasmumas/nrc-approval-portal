@@ -1,4 +1,4 @@
-import MoTable from "components/table/Table";
+import CTable from "components/table/Table";
 import Radio from "assets/icon/station-user-info/radio.svg";
 import MoImage from "components/image/Image";
 import {
@@ -137,7 +137,7 @@ const Table = () => {
   ];
   return (
     <div>
-      <MoTable columns={columns} dataSource={data} paginationTable={true} />
+      <CTable columns={columns} dataSource={data} paginationTable={true} />
     </div>
   );
 };
