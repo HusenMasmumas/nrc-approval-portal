@@ -7,8 +7,15 @@ import Play from "assets/icon/play.svg";
 import Comment from "assets/icon/comment.svg";
 import Share from "assets/icon/share.svg";
 import MoPagination from "components/pagination/Pagination";
-import { StyledDivBorder } from "components/styled/Styled";
+import { StyledDivBorder, StyledLine } from "components/styled/Styled";
 import MoIcon from "components/icon/Icon";
+import { Popover } from "antd";
+import styled from "styled-components";
+import tw from "twin.macro";
+
+export const StyledMenu = styled.div`
+  ${tw`pt-[10px]  cursor-pointer`};
+`;
 
 const obj = [
   {
@@ -58,14 +65,35 @@ const ListBroadcast = () => {
                       09:00-11:00
                     </StyledDivBorder>
 
-                    <StyledDivBorder>
-                      <MoIcon
-                        keyData="menu"
-                        classDiv={{
-                          className: " justify-center flex items-center ",
-                        }}
-                      />
-                    </StyledDivBorder>
+                    <Popover
+                      placement="bottomRight"
+                      content={
+                        <div className="w-[140px]">
+                          <StyledMenu className="hover:text-[#0064ff]">
+                            ดูรายการ{" "}
+                          </StyledMenu>
+                          <StyledMenu className="hover:text-[#0064ff]">
+                            แก้ไข
+                          </StyledMenu>
+                          <StyledMenu className="hover:text-[#0064ff]">
+                            แชร์
+                          </StyledMenu>
+                          <StyledLine />
+                          <StyledMenu className="text-[#E02020] hover:text-[#E02020]">
+                            ลบ
+                          </StyledMenu>
+                        </div>
+                      }
+                    >
+                      <StyledDivBorder>
+                        <MoIcon
+                          keyData="menu"
+                          classDiv={{
+                            className: " justify-center flex items-center ",
+                          }}
+                        />
+                      </StyledDivBorder>
+                    </Popover>
                   </div>
                 </div>
                 <div className=" flex items-center text-[12px] text-[#6F7F91] mt-[15px]">

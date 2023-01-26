@@ -130,9 +130,10 @@ const Table = () => {
       title: "การดำเนินการ",
       dataIndex: "listeningCount",
       key: "listeningCount",
+
       render: (listeningCount: string) => {
         return (
-          <div className="flex items-center">
+          <div className="flex items-center w-[90px]">
             <StyledDivPaddingLeft>
               <MoIcon keyData="view" onClick={onView} />
             </StyledDivPaddingLeft>

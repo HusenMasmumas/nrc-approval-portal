@@ -1,13 +1,13 @@
 import { TableRowSelection } from "antd/es/table/interface";
 import MoIcon from "components/icon/Icon";
 import CImage from "components/image/Image";
+import ModalCoordinate from "components/modal/Coordinate";
 import StatusTable from "components/status/Status";
 import { StyledButton, StyledDivPaddingLeft } from "components/styled/Styled";
 import CTable from "components/table/Table";
-import MainAuthorizationRequestInfoProvider from "providers/authorization_request_info";
+import MainCoordinateProvider from "providers/authorization_request_info";
 import React, { useState } from "react";
 import { dayjs } from "tools/timezone";
-import ModalCoordinate from "./Modal";
 
 const Table = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +22,7 @@ const Table = () => {
 
   const onView = () => {};
   const onClock = () => {};
-  const onClick = (e: boolean) => {
+  const onManageModal = (e: boolean) => {
     setIsModalOpen(e);
   };
 
@@ -98,7 +98,7 @@ const Table = () => {
       key: "status",
       render: (status: number) => {
         return (
-          <div className="flex items-center">
+          <div className="flex items-center w-[150px]">
             <StyledDivPaddingLeft>
               <MoIcon keyData="view" onClick={onView} />
             </StyledDivPaddingLeft>
@@ -109,7 +109,7 @@ const Table = () => {
               {status === 1 ? (
                 <StyledButton
                   onClick={(e) => {
-                    onClick(!isModalOpen);
+                    onManageModal(!isModalOpen);
 
                     e.stopPropagation();
                   }}
@@ -185,11 +185,11 @@ const Table = () => {
     },
   ];
   return (
-    <MainAuthorizationRequestInfoProvider
+    <MainCoordinateProvider
       value={{
         isModalOpen: isModalOpen,
         setIsModalOpen: setIsModalOpen,
-        onClick: onClick,
+        onManageModal: onManageModal,
       }}
     >
       <div>
@@ -202,7 +202,7 @@ const Table = () => {
         />
         {!!isModalOpen && <ModalCoordinate />}
       </div>
-    </MainAuthorizationRequestInfoProvider>
+    </MainCoordinateProvider>
   );
 };
 

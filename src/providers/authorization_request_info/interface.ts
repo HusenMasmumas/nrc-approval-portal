@@ -1,5 +1,5 @@
-export interface IAuthorizationRequestInfoContext {
+export interface ICoordinateContext {
   isModalOpen: boolean;
   setIsModalOpen: (e: boolean) => void;
-  onClick: (e: boolean) => void;
+  onManageModal: (e: boolean) => void;
 }

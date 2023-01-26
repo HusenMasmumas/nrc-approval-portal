@@ -94,7 +94,11 @@ const Table = () => {
       dataIndex: "role",
       key: "role",
       render: (role: string) => {
-        return <StyledSpanBorder>{role}</StyledSpanBorder>;
+        return (
+          <div className="w-[100px]">
+            <StyledSpanBorder>{role}</StyledSpanBorder>
+          </div>
+        );
       },
     },
 
@@ -120,7 +124,7 @@ const Table = () => {
       key: "name",
       render: (name: string, data: any) => {
         return (
-          <div className=" flex">
+          <div className=" flex items-center w-[90px]">
             <StyledDivPaddingLeft>
               <MoIcon keyData="view" />
             </StyledDivPaddingLeft>

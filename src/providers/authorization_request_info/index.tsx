@@ -1,12 +1,11 @@
-import { IAuthorizationRequestInfoContext } from "./interface";
+import { ICoordinateContext } from "./interface";
 import { createContext, useContext } from "react";
 
-const MainAuthorizationRequestInfoContext =
-  createContext<IAuthorizationRequestInfoContext>(
-    {} as IAuthorizationRequestInfoContext
-  );
+const MainCoordinateContext = createContext<ICoordinateContext>(
+  {} as ICoordinateContext
+);
 
-const MainAuthorizationRequestInfoProvider = ({
+const MainCoordinateProvider = ({
   children,
   value,
 }: {
@@ -14,12 +13,11 @@ const MainAuthorizationRequestInfoProvider = ({
   value: any;
 }) => {
   return (
-    <MainAuthorizationRequestInfoContext.Provider value={{ ...value }}>
+    <MainCoordinateContext.Provider value={{ ...value }}>
       {children}
-    </MainAuthorizationRequestInfoContext.Provider>
+    </MainCoordinateContext.Provider>
   );
 };
 
-export const useMainAuthorizationRequestInfo = () =>
-  useContext(MainAuthorizationRequestInfoContext);
-export default MainAuthorizationRequestInfoProvider;
+export const useMainCoordinate = () => useContext(MainCoordinateContext);
+export default MainCoordinateProvider;

@@ -2,6 +2,7 @@ import { ShareAltOutlined } from "@ant-design/icons";
 import { TableRowSelection } from "antd/es/table/interface";
 import MoIcon from "components/icon/Icon";
 import CImage from "components/image/Image";
+import ModalCoordinate from "components/modal/Coordinate";
 import StatusTable from "components/status/Status";
 import {
   StyledButton,
@@ -9,10 +10,12 @@ import {
   StyledStatus,
 } from "components/styled/Styled";
 import CTable from "components/table/Table";
+import MainCoordinateProvider from "providers/authorization_request_info";
 import React, { useState } from "react";
 import { dayjs } from "tools/timezone";
 
 const Table = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
@@ -24,6 +27,10 @@ const Table = () => {
 
   const onView = () => {};
   const onClock = () => {};
+
+  const onManageModal = (e: boolean) => {
+    setIsModalOpen(e);
+  };
 
   const columns: any = [
     {
@@ -156,6 +163,10 @@ const Table = () => {
               ) : (
                 status === 1 && (
                   <StyledButton
+                    onClick={(e) => {
+                      onManageModal(!isModalOpen);
+                      e.stopPropagation();
+                    }}
                     thm={{
                       height: "35px",
                     }}
@@ -210,15 +221,24 @@ const Table = () => {
     },
   ];
   return (
-    <div>
-      <CTable
-        rowKey="no"
-        columns={columns}
-        dataSource={data}
-        rowSelection={{ ...rowSelection, checkStrictly: false }}
-        paginationTable={true}
-      />
-    </div>
+    <MainCoordinateProvider
+      value={{
+        isModalOpen: isModalOpen,
+        setIsModalOpen: setIsModalOpen,
+        onManageModal: onManageModal,
+      }}
+    >
+      <div>
+        <CTable
+          rowKey="no"
+          columns={columns}
+          dataSource={data}
+          rowSelection={{ ...rowSelection, checkStrictly: false }}
+          paginationTable={true}
+        />
+        {!!isModalOpen && <ModalCoordinate />}
+      </div>
+    </MainCoordinateProvider>
   );
 };
 

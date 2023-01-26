@@ -54,15 +54,13 @@ const Station = () => {
 
           <div
             className={`${
-              !!open
-                ? "open_list rounded-[5px] border border-[#DEE2E7]"
-                : " hidden "
+              !!open ? " rounded-[5px] border border-[#DEE2E7]" : " hidden "
             }`}
           >
             <Table />
           </div>
 
-          <div className={`${!!open ? " hidden " : "open_list"}`}>
+          <div className={`${!!open ? " hidden " : ""}`}>
             <CardList />
           </div>
         </div>

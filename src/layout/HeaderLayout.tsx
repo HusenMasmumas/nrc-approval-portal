@@ -1,18 +1,39 @@
 import { useTranslation } from "react-i18next";
-import { Badge } from "antd";
+import { Badge, Popover } from "antd";
 import LogoHeader from "assets/img/LogoHeader.svg";
 import { BellOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { StyledAvatarNone, StyledInput } from "components/styled/Styled";
+import {
+  StyledAvatarNone,
+  StyledInput,
+  StyledLine,
+} from "components/styled/Styled";
 import CImage from "components/image/Image";
 import CSelect from "components/select/Selector";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { useNavigate } from "react-router-dom";
+
+export const StyledMenu = styled.div`
+  &:hover {
+    color: #e02020;
+  }
+  ${tw`pt-[10px]  cursor-pointer`};
+`;
 
 const HeaderLayout = () => {
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("local-lang", lang);
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login", {
+      replace: true,
+    });
+  };
   return (
     <div
       style={{
@@ -63,7 +84,30 @@ const HeaderLayout = () => {
               </Badge>
             </div>
             <div>
-              <StyledAvatarNone size={40} icon={<UserOutlined />} />
+              <Popover
+                placement="bottomRight"
+                overlayStyle={{
+                  paddingTop: "0px",
+                  width: 190,
+                }}
+                trigger="click"
+                content={
+                  <div>
+                    <div className="mt-[10px]">Sukanya_admin </div>
+                    <div className="text-[#0064FF] mt-[10px] cursor-pointer">
+                      ข้อมูลส่วนตัว
+                    </div>
+                    <StyledLine className="border-[#F0F0F0] mt-[10px]" />
+                    <StyledMenu>งานของฉัน</StyledMenu>
+                    <StyledMenu>การตั้งค่า</StyledMenu>
+                    <StyledMenu>ข้อความ</StyledMenu>
+                    <StyledMenu>ช่วยเหลือ</StyledMenu>
+                    <StyledMenu onClick={() => logout()}>ออกจากระบบ</StyledMenu>
+                  </div>
+                }
+              >
+                <StyledAvatarNone size={40} icon={<UserOutlined />} />
+              </Popover>
             </div>
           </div>
         </div>

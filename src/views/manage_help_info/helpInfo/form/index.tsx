@@ -1,59 +1,61 @@
 import { Form } from "antd";
+import TextArea from "antd/es/input/TextArea";
 import { useForm } from "antd/lib/form/Form";
 import CModal from "components/modal/Modal";
 import CSelect from "components/select/Selector";
 import { StyledButton, StyledInput } from "components/styled/Styled";
-import { useMainAuthorizationRequestInfo } from "providers/authorization_request_info";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-const ModalCoordinate = () => {
-  const { t } = useTranslation();
-  const { onClick, isModalOpen } = useMainAuthorizationRequestInfo();
-  const [coordinate] = useForm();
+type Props = {
+  isModalOpen: boolean;
+  onManageModal: (e: boolean) => void;
+};
 
-  const onFinish = () => {
-    onClick(false);
-  };
+const FormAddHelpInfo: FC<Props> = ({ isModalOpen, onManageModal }) => {
+  const { t } = useTranslation();
+  const [formAddHelpInfo] = useForm();
+  const onFinish = (data: any) => {};
   return (
     <CModal
       open={isModalOpen}
-      title="รับเรื่อง"
-      onOk={() => onClick(false)}
-      onCancel={() => onClick(false)}
+      title="เพิ่มข้อมูล"
+      onOk={() => onManageModal(false)}
+      onCancel={() => onManageModal(false)}
       body={
         <>
-          <Form name="addUser" onFinish={onFinish} form={coordinate}>
-            <div className="text-[18px] font-bold">เลขที่ : N161165005</div>
-            <div className="text-[#23272B] pb-[10px]">สถานี</div>
+          <Form name="addUser" onFinish={onFinish} form={formAddHelpInfo}>
+            <div className="text-[#23272B]">คำถาม</div>
             <div>
               <Form.Item
-                name="email"
+                name="question"
                 rules={[
                   {
                     required: true,
                   },
                 ]}
               >
-                <StyledInput placeholder="สถานี" />
+                <StyledInput placeholder="ใส่คำถาม" />
               </Form.Item>
             </div>
 
-            <div className="text-[#23272B] pb-[10px]">ผู้ติดต่อ</div>
+            <div>คำอธิบาย / คำตอบ</div>
             <div>
               <Form.Item
-                name="email"
+                name="answer"
                 rules={[
                   {
                     required: true,
                   },
                 ]}
               >
-                <StyledInput placeholder="ผู้ติดต่อ" />
+                <TextArea maxLength={100} style={{ height: 100 }} />
               </Form.Item>
             </div>
-            <div>เจ้าหน้าที่ที่ดูแล</div>
+
+            <div>หมวดหมู่</div>
             <Form.Item
-              name="station_attendant"
+              name="category_name"
               rules={[
                 {
                   required: true,
@@ -61,7 +63,7 @@ const ModalCoordinate = () => {
               ]}
             >
               <CSelect
-                placeholder="เลือกเจ้าหน้าที่"
+                placeholder="ชื่อหมวดหมู่"
                 Source={[
                   {
                     value: "th",
@@ -88,14 +90,17 @@ const ModalCoordinate = () => {
                 color: "#141414",
                 border: "#E0E0E0",
               }}
-              onClick={() => onClick(false)}
+              onClick={() => onManageModal(false)}
             >
               {t("ยกเลิก")}
             </StyledButton>
           </div>
           <div>
-            <StyledButton onClick={() => coordinate.submit()} htmlType="submit">
-              {t("ยืนยันการรับเรื่อง")}
+            <StyledButton
+              onClick={() => formAddHelpInfo.submit()}
+              htmlType="submit"
+            >
+              {t("บันทึกข้อมูล")}
             </StyledButton>
           </div>
         </>
@@ -104,4 +109,4 @@ const ModalCoordinate = () => {
   );
 };
 
-export default ModalCoordinate;
+export default FormAddHelpInfo;

@@ -1,15 +1,18 @@
 import { ModalProps } from "antd";
+import { ModalThemeTypes } from "components/styled/interface";
 import { StyledLine, StyledModal } from "components/styled/Styled";
 import React, { FC } from "react";
 
 interface Props extends ModalProps {
   body: JSX.Element;
   footerRender: JSX.Element;
+  thm?: ModalThemeTypes;
 }
 
-const CModal: FC<Props> = ({ body, footerRender, ...props }) => {
+const CModal: FC<Props> = ({ body, footerRender, thm, ...props }) => {
   return (
     <StyledModal
+      thm={{ ...thm }}
       className="manage-modal"
       {...props}
       title={

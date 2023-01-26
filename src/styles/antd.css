@@ -38,14 +38,10 @@
 
 .select-group .ant-select-item-option-grouped {
     padding-inline-start: 12px !important;
+
 }
 
 .green-select .ant-select-selector {
     background: #EAF7ED !important;
     color: #28A745 !important;
-}
-
-.ant-input:focus-visible {
-    box-shadow: unset !important;
-    border: unset !important;
 }

@@ -22,3 +22,7 @@ export interface StatusThemeTypes {
 export interface SelectThemeTypes {
   height?: string;
 }
+
+export interface ModalThemeTypes {
+  height?: string;
+}

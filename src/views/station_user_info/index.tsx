@@ -45,7 +45,7 @@ const StationUserInfo = () => {
                 onClick={() => onClick(!isModalOpen)}
               >
                 <MoIcon keyData="plus" />
-                <div className="ml-[10px]">เพิ่มหมวดหมู่</div>
+                <div className="ml-[10px]">เพิ่มผู้ใช้งานสถานี</div>
               </StyledButton>
             </div>
           </div>

@@ -28,6 +28,7 @@ const FormAddStationInfoCategory: FC<Props> = ({
     <CModal
       open={isModalOpen}
       title="เพิ่มหมวดหมู่"
+      width="40%"
       onOk={() => onCloseModal(false)}
       onCancel={() => onCloseModal(false)}
       body={
@@ -38,11 +39,13 @@ const FormAddStationInfoCategory: FC<Props> = ({
                 <div className="text-[#23272B] pb-[10px]">รูปภาพหมวดหมู่</div>
 
                 <Form.Item name="image">
-                  <div className="h-[234px] w-full border-dashed  rounded-[5px] border-2 border-[#647486] flex flex-col justify-center items-center cursor-pointer">
-                    <div>
-                      <CImage src={addImage} height={50} />
+                  <div className="bg-white p-[10px] rounded-[3px]">
+                    <div className="h-[210px] w-full border-dashed  rounded-[8px] border-2 border-[#647486] flex flex-col justify-center items-center cursor-pointer bg-[#F0F2F5]">
+                      <div>
+                        <CImage src={addImage} height={50} />
+                      </div>
+                      <div>เลือกรูปภาพ</div>
                     </div>
-                    <div>เลือกรูปภาพ</div>
                   </div>
                 </Form.Item>
               </div>
@@ -76,7 +79,7 @@ const FormAddStationInfoCategory: FC<Props> = ({
                   >
                     <TextArea
                       maxLength={100}
-                      style={{ height: 120, marginBottom: 24 }}
+                      style={{ height: 100, marginBottom: 24 }}
                     />
                   </Form.Item>
                 </div>

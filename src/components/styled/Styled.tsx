@@ -1,10 +1,11 @@
-import { Input, Button, Avatar, Modal, Select } from "antd";
+import { Input, Button, Avatar, Modal, Select, Radio } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styled from "styled-components";
 import tw from "twin.macro";
 import {
   ButtonThemeTypes,
   InputThemeTypes,
+  ModalThemeTypes,
   SelectThemeTypes,
   StatusThemeTypes,
 } from "./interface";
@@ -34,8 +35,12 @@ export const StyledInputNoBorder = styled(Input)<{ thm?: InputThemeTypes }>`
     border: unset !important;
     color: ${({ thm }) => thm?.color || "#525F7F"} !important;
   }
+
+  &.ant-input:focus-visible {
+    box-shadow: unset !important;
+    border: unset !important;
+  }
   &.ant-input:focus,
-  .ant-input:focus-visited,
   .ant-input:active {
     box-shadow: unset !important;
     border: unset !important;
@@ -116,7 +121,7 @@ export const StyledLine = styled.div`
   ${tw`border-b-[1px] border-[#D9DEE4]`};
 `;
 
-export const StyledModal = styled(Modal)`
+export const StyledModal = styled(Modal)<{ thm?: ModalThemeTypes }>`
   &.ant-modal .ant-modal-content {
     padding: unset !important;
   }
@@ -133,7 +138,7 @@ export const StyledModal = styled(Modal)`
   }
 
   &.manage-modal .scroll {
-    height: 40vh;
+    height: ${({ thm }) => thm?.height || "40vh"};
     overflow-y: auto;
     overflow-x: clip;
   }
@@ -162,5 +167,11 @@ export const StyledSelect = styled(Select)<{
   .ant-select-selection-placeholder {
     display: flex !important;
     align-items: center !important;
+  }
+`;
+
+export const StyledRadio = styled(Radio.Group)`
+  &.ant-radio-group {
+    font-size: unset !important;
   }
 `;
