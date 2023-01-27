@@ -57,11 +57,11 @@ const ListBroadcast = () => {
                   </div>
                   <StatusTable keyData={6} />
                   <div className=" ml-auto flex justify-end">
-                    <StyledDivBorder className="mr-[10px]">
+                    <StyledDivBorder className="mr-[10px] px-[10px] py-[6px]">
                       {dayjs().format("DD/MM/BB")}
                     </StyledDivBorder>
 
-                    <StyledDivBorder className="mr-[10px]">
+                    <StyledDivBorder className="mr-[10px]  px-[10px] py-[6px]">
                       09:00-11:00
                     </StyledDivBorder>
 
@@ -85,7 +85,7 @@ const ListBroadcast = () => {
                         </div>
                       }
                     >
-                      <StyledDivBorder>
+                      <StyledDivBorder className="px-[10px] py-[6px]">
                         <MoIcon
                           keyData="menu"
                           classDiv={{

@@ -18,6 +18,7 @@ import CategoryManageStation from "views/manage_station_info/category";
 import ManageLevelStaff from "views/manage_departments/manage_level_staff";
 import StaffInfo from "views/manage_departments/staff_info";
 import PersonalInfo from "views/personal_info";
+import Discuss from "views/manage_request_info/my_work/discuss";
 
 export interface IRouter {
   path: string;
@@ -119,6 +120,11 @@ export const routers: RouteObject[] = [
       {
         path: "/personal-info",
         element: <PersonalInfo />,
+        index: true,
+      },
+      {
+        path: "/discuss",
+        element: <Discuss />,
         index: true,
       },
     ],

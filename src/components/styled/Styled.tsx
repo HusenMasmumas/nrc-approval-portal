@@ -98,7 +98,7 @@ export const StyledAvatar = styled(Avatar)`
 `;
 
 export const StyledDivBorder = styled.div`
-  ${tw` border-[1px] border-[#D9DEE4] px-[10px] py-[6px] rounded-[5px] flex justify-center items-center  `};
+  ${tw` border-[1px] border-[#D9DEE4]  rounded-[5px] flex justify-center items-center  `};
 `;
 
 export const StyledSpanBorder = styled.span`

@@ -8,6 +8,7 @@
 .ant-form *,
 .ant-modal *,
 .ant-popover-content *,
+.ant-divider *,
 .ant-table table {
     font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium"
 }
@@ -44,4 +45,5 @@
 .green-select .ant-select-selector {
     background: #EAF7ED !important;
     color: #28A745 !important;
+
 }
