@@ -38,7 +38,7 @@ interface Props extends ImageProps {
   classDiv?: IClassDiv;
 }
 
-const MoIcon: FC<Props> = ({
+const CIcon: FC<Props> = ({
   keyData,
   classDiv = { className: "justify-center flex items-center " },
   onClick,
@@ -57,4 +57,4 @@ const MoIcon: FC<Props> = ({
   );
 };
 
-export default MoIcon;
+export default CIcon;

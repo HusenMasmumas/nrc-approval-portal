@@ -4,7 +4,7 @@ import { FC } from "react";
 
 interface Props extends PaginationProps {}
 
-const MoPagination: FC<Props> = ({ ...props }) => {
+const CPagination: FC<Props> = ({ ...props }) => {
   const { page, setPage } = useMainPagination();
   const onChangePage = (pageData: number, type?: string) => {
     if (!!setPage) {
@@ -35,4 +35,4 @@ const MoPagination: FC<Props> = ({ ...props }) => {
   );
 };
 
-export default MoPagination;
+export default CPagination;

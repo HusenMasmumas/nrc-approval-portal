@@ -1,4 +1,4 @@
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
 import CTable from "components/table/Table";
 import { useMainPagination } from "providers/pagination";
@@ -100,10 +100,10 @@ const Table = () => {
         return (
           <div className=" flex">
             <StyledDivPaddingLeft>
-              <MoIcon keyData="edit" />
+              <CIcon keyData="edit" />
             </StyledDivPaddingLeft>
             <StyledDivPaddingLeft>
-              <MoIcon keyData="delete" />
+              <CIcon keyData="delete" />
             </StyledDivPaddingLeft>
           </div>
         );

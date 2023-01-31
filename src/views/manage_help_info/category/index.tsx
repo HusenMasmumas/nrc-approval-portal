@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
 import HeaderContent from "components/header_content/HeaderContent";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { StyledButton, StyledInput } from "components/styled/Styled";
 import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
@@ -50,7 +50,7 @@ const ManageHelpCategory = () => {
                 className=" flex justify-center items-center"
                 onClick={() => onManageModal(!isModalOpen)}
               >
-                <MoIcon keyData="plus" />
+                <CIcon keyData="plus" />
                 <div className="ml-[10px]">เพิ่มหมวดช่วยเหลือ</div>
               </StyledButton>
             </div>

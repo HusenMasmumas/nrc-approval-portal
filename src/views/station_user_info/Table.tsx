@@ -7,7 +7,7 @@ import {
   StyledSpanBorder,
 } from "components/styled/Styled";
 import { dayjs } from "tools/timezone";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 
 const Table = () => {
   const data = [
@@ -126,13 +126,13 @@ const Table = () => {
         return (
           <div className=" flex items-center w-[90px]">
             <StyledDivPaddingLeft>
-              <MoIcon keyData="view" />
+              <CIcon keyData="view" />
             </StyledDivPaddingLeft>
             <StyledDivPaddingLeft>
-              <MoIcon keyData="edit" />
+              <CIcon keyData="edit" />
             </StyledDivPaddingLeft>
             <StyledDivPaddingLeft>
-              <MoIcon keyData="delete" />
+              <CIcon keyData="delete" />
             </StyledDivPaddingLeft>
           </div>
         );

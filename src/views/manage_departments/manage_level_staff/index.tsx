@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
 import HeaderContent from "components/header_content/HeaderContent";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { StyledButton, StyledInput } from "components/styled/Styled";
 import MainPaginationProvider from "providers/pagination";
 import { IPagination } from "providers/pagination/interface";
@@ -39,7 +39,7 @@ const ManageLevelStaff = () => {
                 thm={{ height: "40px" }}
                 className=" flex justify-center items-center"
               >
-                <MoIcon keyData="plus" />
+                <CIcon keyData="plus" />
                 <div className="ml-[10px]">เพิ่มระดับเจ้าหน้าที่</div>
               </StyledButton>
             </div>

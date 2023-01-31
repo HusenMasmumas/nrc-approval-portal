@@ -2,7 +2,7 @@ import { Popover, Select } from "antd";
 import { TableRowSelection } from "antd/es/table/interface";
 import CTable from "components/table/Table";
 import React, { useState } from "react";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { StyledDivPaddingLeft } from "components/styled/Styled";
 import CImage from "components/image/Image";
 
@@ -135,10 +135,10 @@ const Table = () => {
         return (
           <div className="flex items-center w-[90px]">
             <StyledDivPaddingLeft>
-              <MoIcon keyData="view" onClick={onView} />
+              <CIcon keyData="view" onClick={onView} />
             </StyledDivPaddingLeft>
             <StyledDivPaddingLeft>
-              <MoIcon keyData="clock" onClick={onClock} />
+              <CIcon keyData="clock" onClick={onClock} />
             </StyledDivPaddingLeft>
 
             <Popover
@@ -152,7 +152,7 @@ const Table = () => {
               }
             >
               <StyledDivPaddingLeft>
-                <MoIcon keyData="menu" onClick={onClock} />
+                <CIcon keyData="menu" onClick={onClock} />
               </StyledDivPaddingLeft>
             </Popover>
           </div>

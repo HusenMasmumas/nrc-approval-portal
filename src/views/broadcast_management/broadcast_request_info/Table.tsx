@@ -1,6 +1,6 @@
 import { ShareAltOutlined } from "@ant-design/icons";
 import { TableRowSelection } from "antd/es/table/interface";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import CImage from "components/image/Image";
 import ModalCoordinate from "components/modal/Coordinate";
 import StatusTable from "components/status/Status";
@@ -122,10 +122,10 @@ const Table = () => {
         return (
           <div className="flex items-center">
             <StyledDivPaddingLeft>
-              <MoIcon keyData="view" onClick={onView} />
+              <CIcon keyData="view" onClick={onView} />
             </StyledDivPaddingLeft>
             <StyledDivPaddingLeft>
-              <MoIcon keyData="clock" onClick={onClock} />
+              <CIcon keyData="clock" onClick={onClock} />
             </StyledDivPaddingLeft>
             <div className="ml-[10px]">
               {status === 4 ? (

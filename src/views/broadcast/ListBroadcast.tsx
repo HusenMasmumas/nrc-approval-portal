@@ -6,9 +6,9 @@ import Heart from "assets/icon/heart.svg";
 import Play from "assets/icon/play.svg";
 import Comment from "assets/icon/comment.svg";
 import Share from "assets/icon/share.svg";
-import MoPagination from "components/pagination/Pagination";
+import CPagination from "components/pagination/Pagination";
 import { StyledDivBorder, StyledLine } from "components/styled/Styled";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { Popover } from "antd";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -86,7 +86,7 @@ const ListBroadcast = () => {
                       }
                     >
                       <StyledDivBorder className="px-[10px] py-[6px]">
-                        <MoIcon
+                        <CIcon
                           keyData="menu"
                           classDiv={{
                             className: " justify-center flex items-center ",
@@ -123,7 +123,7 @@ const ListBroadcast = () => {
         );
       })}
       <div className="flex justify-end mt-[20px]">
-        <MoPagination />
+        <CPagination />
       </div>
     </div>
   );

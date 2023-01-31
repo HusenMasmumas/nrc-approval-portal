@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
 import HeaderContent from "components/header_content/HeaderContent";
-import MoIcon from "components/icon/Icon";
+import CIcon from "components/icon/Icon";
 import { StyledButton, StyledInput } from "components/styled/Styled";
 import TabSearch from "components/tab_search/TabSearch";
 import MainPaginationProvider from "providers/pagination";
@@ -80,7 +80,7 @@ const StaffInfo = () => {
                 className=" flex justify-center items-center"
                 onClick={() => onManageModal(!isModalOpen)}
               >
-                <MoIcon keyData="plus" />
+                <CIcon keyData="plus" />
                 <div className="ml-[10px]">เพิ่มเจ้าหน้าที่ในระบบ</div>
               </StyledButton>
             </div>

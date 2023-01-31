@@ -1,5 +1,5 @@
 import { Table, TableProps } from "antd";
-import MoPagination from "components/pagination/Pagination";
+import CPagination from "components/pagination/Pagination";
 import { FC } from "react";
 import styled from "styled-components";
 
@@ -40,7 +40,7 @@ const CTable: FC<Props> = ({
       />
       {!!paginationTable ? (
         <div className=" bg-white flex p-[15px] justify-end ">
-          <MoPagination className={classNamePagination} />
+          <CPagination className={classNamePagination} />
         </div>
       ) : null}
     </div>

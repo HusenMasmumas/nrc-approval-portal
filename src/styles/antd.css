@@ -10,11 +10,12 @@
 .ant-popover-content *,
 .ant-divider *,
 .ant-collapse *,
+.ant-spin *,
+.ant-notification *,
+.ant-spin-container,
 .ant-table table {
     font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium"
 }
-
-
 
 .ant-popover-arrow {
     display: none !important;
@@ -30,7 +31,16 @@
     overflow-y: auto !important;
 }
 
+.ant-spin-nested-loading>div>.ant-spin {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    position: fixed !important;
+    color: #E02020 !important;
+}
 
+.ant-spin .ant-spin-dot-item {
+    background-color: #E02020 !important;
+}
 
 .select-group .ant-select-item-group {
     min-height: 1px !important;
