@@ -44,7 +44,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
   }, []);
 
   const gotoMenu = (k: any) => {
-    navigate(k?.link);
+    navigate(k?.link, { replace: true });
   };
 
   const setValueSelectedKeys = (data: string[]) => {
@@ -146,7 +146,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                                       childChildren?.keyName,
                                     ]);
                                   }}
-                                  className={` hover:text-[#E02020] pl-[60px] flex text-[15px] cursor-pointer items-center h-[40px] circle `}
+                                  className={` hover:text-[#E02020] pl-[60px] flex  cursor-pointer items-center h-[40px] circle `}
                                 >
                                   <div
                                     className={`${
@@ -179,7 +179,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                             gotoMenu(child);
                             setValueSelectedKeys([child?.keyName]);
                           }}
-                          className={`text-[#141414] pl-[40px] flex text-[13px] cursor-pointer items-center h-[40px] ${
+                          className={`text-[#141414] pl-[40px] flex cursor-pointer items-center h-[40px] ${
                             !!activeMenu(child)
                               ? "bg-[#FFF5F5] text-[#E02020]  icon-menu "
                               : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h"
@@ -198,7 +198,7 @@ const SidebarLayout: FC<Props> = ({ collapsed }) => {
                     gotoMenu(item);
                     setValueSelectedKeys([item.keyName]);
                   }}
-                  className={` cursor-pointer flex text-[13px]  pl-[40px] items-center h-[40px]  ${
+                  className={` cursor-pointer flex   pl-[40px] items-center h-[40px]  ${
                     !!activeMenu(item)
                       ? "bg-[#FFF5F5] text-[#E02020] icon-menu"
                       : "hover:bg-[#FFF5F5] hover:text-[#E02020] icon-menu-h text-[#141414]"

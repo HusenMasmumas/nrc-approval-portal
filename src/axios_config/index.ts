@@ -59,11 +59,11 @@ axios.interceptors.response.use(onResponse, onResponseError);
 export default axios;
 
 export const thrownResponse = (res: AxiosResponse): never => {
-  // if (res.status === 401) {
-  //   localStorage.clear();
-  //   let url: string = window.location.origin;
-  //   window.location.replace(url + "/#/login");
-  // }
+  if (res.status === 401) {
+    localStorage.clear();
+    let url: string = window.location.origin;
+    window.location.replace(url + "/#/login");
+  }
 
   throw new Error(
     i18n.language === "th"

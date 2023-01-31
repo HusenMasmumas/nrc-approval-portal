@@ -6,7 +6,7 @@ import {
   FileDoneOutlined,
 } from "@ant-design/icons";
 import { Collapse } from "antd";
-import ViewWaveSurfer from "assets/wavesurfer/Wavesurfer";
+import ViewWaveSurfer from "components/wavesurfer/Wavesurfer";
 import CImage from "components/image/Image";
 import StatusTable from "components/status/Status";
 import {
