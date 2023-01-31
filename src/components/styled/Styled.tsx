@@ -1,9 +1,10 @@
-import { Input, Button, Avatar, Modal, Select, Radio } from "antd";
+import { Input, Button, Avatar, Modal, Select, Radio, DatePicker } from "antd";
 import { Header } from "antd/es/layout/layout";
 import styled from "styled-components";
 import tw from "twin.macro";
 import {
   ButtonThemeTypes,
+  DatePickerThemeTypes,
   InputThemeTypes,
   ModalThemeTypes,
   SelectThemeTypes,
@@ -173,5 +174,14 @@ export const StyledSelect = styled(Select)<{
 export const StyledRadio = styled(Radio.Group)`
   &.ant-radio-group {
     font-size: unset !important;
+  }
+`;
+
+export const StyledDatePicker = styled(DatePicker)<{
+  thm?: DatePickerThemeTypes;
+}>`
+  width: ${({ thm }) => thm?.width || "100%"};
+  &.ant-picker {
+    height: 40px;
   }
 `;

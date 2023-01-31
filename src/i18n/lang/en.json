@@ -21,5 +21,7 @@
     "manageDepartments": "Manage departments",
     "staffInfo": "Staff info",
     "manageLevelStaff": "Manage level staff",
-    "personalInfo": "Personal Info"
+    "personalInfo": "Personal Info",
+    "back": "Back",
+    "pleaseSelectAnOfficer": "Please select an officer"
 }

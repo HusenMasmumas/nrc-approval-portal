@@ -21,5 +21,7 @@
     "manageDepartments": "จัดการหน่วยงาน",
     "staffInfo": "ข้อมูลเจ้าหน้าที่",
     "manageLevelStaff": "จัดการระดับเจ้าหน้าที่",
-    "personalInfo": "ข้อมูลส่วนตัว"
+    "personalInfo": "ข้อมูลส่วนตัว",
+    "back": "กลับ",
+    "pleaseSelectAnOfficer": "โปรดเลือกเจ้าหน้าที่"
 }

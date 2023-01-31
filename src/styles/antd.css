@@ -9,6 +9,7 @@
 .ant-modal *,
 .ant-popover-content *,
 .ant-divider *,
+.ant-collapse *,
 .ant-table table {
     font-family: "NotoSansThai", "NotoSansThai-Bold", "NotoSansThaiMedium"
 }
@@ -46,4 +47,26 @@
     background: #EAF7ED !important;
     color: #28A745 !important;
 
+}
+
+.ant-collapse-header {
+    align-items: center !important;
+}
+
+.ant-collapse {
+    background-color: #ffffff;
+}
+
+.ant-collapse-content-box {
+    background-color: #F6F9FC !important;
+}
+
+.ant-collapse-content-box {
+    padding: 0px !important;
+}
+
+.ant-collapse-header,
+.ant-collapse-item,
+.ant-collapse {
+    border-radius: 0px !important;
 }

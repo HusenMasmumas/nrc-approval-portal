@@ -1,16 +1,21 @@
 
-import { useCallback, useRef, useState, useMemo } from "react";
+import { useCallback, useRef, useMemo } from "react";
 import { WaveSurfer, WaveForm } from "wavesurfer-react";
-import { Progress } from "antd";
+import { Slider } from "antd";
 import RegionsPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min";
 import { CaretRightOutlined, StepForwardOutlined, StepBackwardOutlined, RetweetOutlined, PauseOutlined } from "@ant-design/icons";
+import Song from "assets/song/SoundHelix-Song-2.mp3"
+import { useMainWaveSurfer } from "providers/wavesurfer";
+import { formatTime } from "tools/util";
 
 const ViewWaveSurfer = () => {
+  const { playPosition,
+    setPlayPosition,
+    duration,
+    setDuration,
+    playing,
+    setPlaying, } = useMainWaveSurfer()
   const wavesurferRef = useRef();
-  const [playPosition, setPlayPosition] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [playing, setPlaying] = useState(false)
-
 
   const plugins = useMemo(() => {
     return [
@@ -19,6 +24,7 @@ const ViewWaveSurfer = () => {
         // options: { dragSelection: true },
       },
     ].filter(Boolean);
+    // eslint-disable-next-line
   }, []);
 
   const handleWSMount = useCallback((waveSurfer) => {
@@ -30,7 +36,7 @@ const ViewWaveSurfer = () => {
 
     if (wavesurferRef.current) {
       wavesurferRef.current.load(
-        "https://storage.googleapis.com/media-session/elephants-dream/the-wires.mp3"
+        Song
       );
 
       if (window) {
@@ -50,15 +56,10 @@ const ViewWaveSurfer = () => {
       setPlayPosition(wavesurferRef.current.getCurrentTime());
     });
 
-
+    // eslint-disable-next-line
   }, []);
 
-  const formatTime = (time) => {
-    return [
-      Math.floor((time % 3600) / 60), // minutes
-      ("00" + Math.floor(time % 60)).slice(-2), // seconds
-    ].join(":");
-  };
+
 
   const play = useCallback(() => {
     wavesurferRef.current.playPause();
@@ -74,49 +75,55 @@ const ViewWaveSurfer = () => {
   };
 
   const playValue = (position) => {
+    setPlayPosition(position)
     // wavesurferRef.current.play();
-    wavesurferRef.current.pause();
+    // wavesurferRef.current.pause();
     if (position !== undefined && !position !== null) {
       seek(position);
     }
   };
 
-  const test = (e) => {
-
-    let data = 100 / duration
-    if (playPosition === duration) {
-      return 100
-    }
-
-    return (data * e) + 0.9
-
-
-
-  }
+  const formatter = (value) => `${formatTime(value)}`;
 
   return (
     <div className="pt-[20px]">
-      <WaveSurfer plugins={plugins} onMount={handleWSMount}>
-        <WaveForm
-          id="waveform"
-          progressColor="#777777"
-          waveColor="#B2B2B2"
-          cursorColor="#ffffff00"
-          barWidth={3}
-          responsive={true}
-        ></WaveForm>
-        <div id="timeline" />
-      </WaveSurfer>
+      <div style={{ position: "relative" }}>
 
+        <WaveSurfer plugins={plugins} onMount={handleWSMount}>
+          <WaveForm
+            id="waveform"
+            progressColor="#777777"
+            waveColor="#B2B2B2"
+            cursorColor="#ffffff00"
+            barWidth={3}
+            responsive={true}
+          ></WaveForm>
+          <div id="timeline" />
+        </WaveSurfer>
 
-
+        {/* <div style={{ position: "absolute", backgroundColor: "red", bottom: 50 }} className="w-full ">
+          test
+        </div> */}
+        <div style={{ position: "absolute", bottom: 0, backgroundColor: "#E7E7E7" }} className="w-full h-[50px]" >
+        </div>
+      </div>
 
       <div className="flex items-center pt-[20px]">
         <div className="pr-[10px]">
           {formatTime(playPosition)}
         </div>
 
-        <Progress percent={test(playPosition)} showInfo={false} status="active" strokeColor={{ '0%': '#B2B2B2', '100%': '#B2B2B2' }} />
+        <div className="w-full">
+          <Slider
+            min={0}
+            max={duration}
+            onChange={playValue}
+            value={playPosition}
+            tooltip={{ formatter }}
+          />
+        </div>
+
+
 
         <div className="pl-[10px]">
           {formatTime(duration)}

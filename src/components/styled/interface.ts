@@ -26,3 +26,7 @@ export interface SelectThemeTypes {
 export interface ModalThemeTypes {
   height?: string;
 }
+
+export interface DatePickerThemeTypes {
+  width?: string;
+}

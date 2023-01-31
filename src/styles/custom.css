@@ -48,6 +48,15 @@
     fill: #E02020;
 }
 
+.icon-black .b {
+    fill: #000000;
+}
+
+.icon-red .b {
+    fill: #E02020;
+}
+
+
 /* ////////////////////////////////// step /////////////////////////////////////////// */
 
 
@@ -140,4 +149,12 @@
 .shadow-play {
 
     box-shadow: 5px 6px 15px #00000029;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
 }
