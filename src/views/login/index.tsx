@@ -8,8 +8,14 @@ import {
   StyledInputPassword,
 } from "components/styled/Styled";
 import CImage from "components/image/Image";
+import { useLogin } from "services/auth";
+import { IUserLogin } from "services/auth/interface";
+import { useIsMutating } from "@tanstack/react-query";
+import { openNotification } from "components/notification/Notification";
 
 const Login = () => {
+  const login = useLogin();
+  const isLoginPost = useIsMutating(["post-login"]);
   let navigate = useNavigate();
 
   const forgotPassword = () => {
@@ -17,10 +23,18 @@ const Login = () => {
       replace: true,
     });
   };
-  const onFinish = () => {
-    localStorage.setItem("token", "Tom");
-    navigate("/dashboard", {
-      replace: true,
+
+  const onFinish = (data: IUserLogin) => {
+    login.mutate(data, {
+      onSuccess: (res) => {
+        localStorage.setItem("access_token", res.accessToken);
+        navigate("/dashboard", {
+          replace: true,
+        });
+      },
+      onError: (err) => {
+        openNotification({ method: "POST_ERROR", message: String(err) });
+      },
     });
   };
 
@@ -69,6 +83,7 @@ const Login = () => {
 
               <div className=" mb-10" style={{ textAlign: "center" }}>
                 <StyledButton
+                  loading={!!isLoginPost ? true : false}
                   // thm={{
                   //   height: "45px",
                   // }}

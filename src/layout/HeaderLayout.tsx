@@ -29,7 +29,7 @@ const HeaderLayout = () => {
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access_token");
     navigate("/login", {
       replace: true,
     });

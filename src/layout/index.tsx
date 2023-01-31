@@ -5,6 +5,8 @@ import ContentLayout from "./ContentLayout";
 import HeaderLayout from "./HeaderLayout";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { Spin } from "antd";
+import { useIsFetching } from "@tanstack/react-query";
 
 type Props = {};
 
@@ -29,6 +31,7 @@ export const ManageNavMenu = () => {
 };
 
 const DefaultLayout = (props: Props) => {
+  const isFetching = useIsFetching();
   const sc = useRef<any>();
   const { pathname } = useLocation();
   useEffect(() => {
@@ -36,26 +39,33 @@ const DefaultLayout = (props: Props) => {
   }, [pathname]);
   return (
     <>
-      <div className=" h-[100vh] ">
-        <HeaderLayout />
-        <div className="flex flex-[row wrap]">
-          <SidebarLayout />
+      <Spin
+        spinning={isFetching ? true : false}
+        size="large"
+        tip="กำลังโหลด..."
+        delay={500}
+      >
+        <div className=" h-[100vh] ">
+          <HeaderLayout />
+          <div className="flex flex-[row wrap]">
+            <SidebarLayout />
 
-          <div className="flex flex-col bg-[#F6F9FC] text-[15px] ">
-            <div
-              ref={sc}
-              className="w-[calc(100vw-39.1vmin)]   h-[calc(100vh-9.9vmin)] overflow-y-auto"
-            >
-              <div className="p-[30px]  ">
-                <ContentLayout />
-                <div className="pt-[30px] text-10 font-NotoSansThai ">
-                  Copyright © 2020 NRC. All rights reserved.
+            <div className="flex flex-col bg-[#F6F9FC] text-[15px] ">
+              <div
+                ref={sc}
+                className="w-[calc(100vw-39.1vmin)]   h-[calc(100vh-9.9vmin)] overflow-y-auto"
+              >
+                <div className="p-[30px]  ">
+                  <ContentLayout />
+                  <div className="pt-[30px] text-10 font-NotoSansThai ">
+                    Copyright © 2020 NRC. All rights reserved.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Spin>
     </>
   );
 };

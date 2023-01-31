@@ -15,7 +15,7 @@ const AuthProvider = ({
 }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access_token");
 
   useEffect(() => {
     let menuInfo = ManageNavMenu();
